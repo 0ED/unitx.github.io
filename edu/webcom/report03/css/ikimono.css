@@ -1,0 +1,50 @@
+/* 
+===================================== 
+
+	ikimono.css
+
+===================================== */
+
+
+
+body.webcom#ikimono #document #contents ul {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 628px;
+    text-align: center;
+}
+
+body.webcom#ikimono #document #contents ul li a {
+
+    /*ブロック*/
+    float: left;
+    dispalay:block;
+    
+    /*位置*/
+    padding-left:20px;
+    padding-right:20px;
+    width: 115px;
+    
+    /*デコレーション*/
+    color: #000;
+    border:1px solid #EEE;
+	background: -webkit-linear-gradient(#CCC 0%, #FFF 30%, #FFF 70%, #CCC 100%); /*Safari, Chrome*/
+    
+    line-height: 50px;
+    text-decoration: none;
+	text-align: center;
+}
+
+body.webcom#ikimono #document #contents ul li a:hover {
+    background: -webkit-linear-gradient(#BBB 0%, #EEE 30%, #EEE 70%, #BBB 100%); /*Safari, Chrome*/
+}
+
+
+body.webcom#ikimono #document #contents p span#audioDanger {
+    color: red;
+}
+
+
+
+

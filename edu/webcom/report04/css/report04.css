@@ -1,0 +1,142 @@
+/* 
+===================================== 
+
+	report04.css
+
+===================================== */
+
+
+
+
+
+/* メイン
+================================= */
+html body {
+}
+html body {
+}
+html body #document {
+}
+
+
+
+
+/* コンテンツ
+================================= */
+#contents {
+	margin-top: 50px;
+	margin-left:auto;
+	margin-right:auto;
+    width: 780px;
+}
+#contents h1 {
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size:2.7em;
+}
+
+
+
+/* スロットフィールド
+================================= */
+#slotField {
+    height:480px;
+    padding:20px;
+    background: #FFF url(../images/slot.png) no-repeat;
+	background-position: 0px 0px;
+	background-size: 100% 100%;
+}
+
+#slotField img {
+	margin-left: 20px;
+	float: left;
+}
+
+
+
+
+
+#markField {
+    margin-top:167px;
+    margin-left:auto;
+	margin-right:auto;
+    width:625px;
+    /*background-color:yellow;*/
+}
+
+/* clearfix! */
+#markField:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+
+#markField .mark:first-child {
+    margin-left:5px;
+}
+
+#markField .mark {
+    float:left;
+    width:194px;
+    height: 228px;
+    margin-right: 19px;
+    /*background-color:green;*/
+    overflow:hidden;
+}
+
+#markField .mark:last-child {
+    margin-right: 0px;
+}
+
+#markField .mark img {
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#markField .mark img#markImage0,img#markImage1,img#markImage2 {
+    margin-top: -830px; /*ここで位置指定*/
+}
+
+
+
+
+
+/* ボタンフィールド
+================================= */
+#buttonField {
+}
+
+#buttonField input.stopButton {
+    width:250px;
+    margin-right: 5px;
+    font-size:20px;
+}
+
+#buttonField input.startButton {
+    width:780px;
+    font-size:20px;
+}
+
+#buttonField input.stopButton:last-child {
+    width:20px;
+}
+
+/* フッター
+================================= */
+#footer {
+    color:#444;
+    font-size:1.1em;
+    margin-top:10px;
+    margin-bottom:50px;
+}
+
+#footer address {
+    text-align:center;
+}
+
+
+

@@ -1,0 +1,124 @@
+/* 
+===================================== 
+
+	article.css
+
+===================================== */
+
+
+/* アーティクル
+================================= */
+article {
+    margin-top: 25px;
+    margin-bottom: 200px;
+}
+
+article h2 {
+    font-size: 2.0em;
+    color:gray;
+}
+
+article section h4 {
+    font-size: 1.1em;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    color: rgb(0,205,0); /*#E18728;*/
+    border-bottom: 3px solid gray;
+    border-left: 12px solid gray;
+}
+
+article section {
+	margin-bottom: 10px;
+}
+
+article section p {
+    font-size:1.0em;
+	margin-bottom: 15px;
+}
+
+article section div.Block {
+	width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+article section div.class {
+	margin-bottom: 25px;
+}
+
+/* イメージリンクの設定 */
+article section div.class a {
+}
+
+article section div.class a img {
+}
+
+article section div.class a:hover img {
+    outline: 2px solid red;
+}
+
+article h5 {
+	font-size: 1.1em;
+}
+
+article h5 span.for_inline_of_h5 {
+	padding-left: 7px;
+	padding-right: 7px;
+	border-left: 8px solid #E18728;
+	border-right: 8px solid #E18728; /*200,255,200*/
+}
+
+
+article span.tableName {
+	display: block;
+    text-align:center;
+    font-size:0.9em;
+    color: #000;
+}
+
+article div#image {
+    text-align:center;
+}
+
+article img {
+}
+
+
+
+
+
+
+/* 
+	テーブル
+*/
+article table, th, td {
+    border:none;
+}
+
+article table {
+    width: 680px;
+    margin-bottom: 15px;
+}
+
+article table tr {
+    font-size:14px;
+}
+
+
+article table tr th {
+    background-color: #A7F1FF;
+}
+
+/* 一列目 */
+article table tr th:first-child {
+    width: 110px;
+}
+
+article table tr td {
+}
+
+article table tr td pre {
+}

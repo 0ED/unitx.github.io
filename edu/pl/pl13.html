@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title> 
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語小テスト、構文解析の小テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜何を学んで来たのか</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>そろそろ、プログラミング言語の授業も終わりに近づきました。moodleに記された授業内容を振り返って、この授業を介して、何を学んで来たのか、それを1,000文字程度にまとめてください。（就職活動が始まりました。字数が決められた文章を書く）</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">新たなプログラミング言語</span></h5>
+    		    <p>
+    		    　moodleに記載されている授業内容の中で"新たなプログラミング言語やスタイルに出会ったときの咀嚼力と免疫力"に関して触れられていたが、春学期と比べて、免疫力を手に入れたと思います。授業で実際に、Prolog, LispといったC, Javaとは違った新たな体系の言語や字句解析器、構文解析器のようなメタ言語を学んだりしていく中で、この言語が良くてある言語は悪いという概念ではなく、それぞれの言語の良さ、プログラミング言語の文化、体系の違いを理解することで、1から言語を学ぶという感覚ではなく、柔軟に言語を使えるような自信が出て来たような気がします。また、自分でプログラミング言語（解析器）を作ることで、プログラミング言語としての使い方だけでなく、何らかの書類の処理系（Tex, HTML, 暗号化, 復号化, 文字エンコーディングなど）を作れる可能性が広がりました。
+    		    </p>
+    		    
+    		    <h5><span class="for_inline_of_h5">プライドではなく、イノベーションを</span></h5>
+				<p>
+				　小学校、中学校、高校、大学に渡って、これまで競争ばかりで誰かと一緒に何かを作ったり、テストをすることはほぼなく、一人で取り組む経験ばかりだった（時には必要なことですが）ことで、誰かと比べて点数が勝った方が良いことだという思い込みや、一人で作った方が他人を見返せるというような思い込みを自分自身も周りも持っていたように思います。この授業のプロジェクト課題、毎回の課題を通して、複数人で何かを作り上げてたり、一緒に考えることで良い仲が出来たと思いますし、複数人で取り組んだ方が、一人では不可能なプロジェクトを達成することが出来るかもしれないという可能性が見えてきました。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">理解、行解</span></h5>
+				<p>
+    		    　「ソフトウェア工学Ⅱ」の中でも、Javaのソースコードを基に理解、行解をしましたが、「プログラミング言語」では、幅広い言語（Prolog, lisp, Pythonなど）での理解、行解をすることが出来ました。そして、課題の中でプログラミング言語Pythonによるドラゴンのモデリングを通して、Pythonの構文における文化、プログラムの構造を学び、ドラゴンのプログラムをコードリーディングしていく中で、自分の書き方ではダメなコードを発見したり、幾何学的に3Dオブジェクトを動かすにはどうすれば良いのかを自分で考えたりすることで、理解、行解を積むことの大切さを学びました。
+    		    </p>
+    		</div>
+    	</section>
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">    		    
+    		    <h5><span class="for_inline_of_h5">理解</span></h5>
+    		    <p>
+    		    　Makefileに関して、"GNU Make"の本を読んで、「けっこうmakeを理解したのでないか」と思い込んでいましたが、lexer, parserを参考にPaladin用に作るために、Makefileを書いたときにうまく表現できなくて、まだまだコードリーディングが足りなかったなあと実感しました。1回だけなんとなく読み通して、何度か書くだけではやはり理解できないことを痛感しました。やはり、ドラゴン課題でもプログラミングでも語学でも手芸でも、何度も何度もやって体に摩り付かさないとマスターにはなれないなあと思うので、もっとちゃんと理解するように心がけます。
+    		    </p>
+    		    
+    		    <h5><span class="for_inline_of_h5">世界に発信するために</span></h5>
+    		    <p>
+    		    　最後の講義でパッケージ, モジュールを問うということで、結構曖昧な感じで理解していたファイルから、理解していないファイルまであったので、ちょうど良い機会となって良かったです。それから、自分でパッケージを書くことによって、誰か1人でも役立つようなものを提供できるようにがんばろうと思います。
+    		    </p>
+    		    
+			</div>
+	    </section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

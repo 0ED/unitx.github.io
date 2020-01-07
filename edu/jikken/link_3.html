@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name = "description" content="このサイトはW3C、アクセシビリティ、バリデーションとは何なのか。どのようにすれば、ユーザーに認められるサイトを構築できるのかを考察する。" />
+<meta name = "keyboard" content="w3c,アクセシビリティ,バリデーション,サイト構築" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp" />
+<meta http-equiv="Content-Type" content="text/html; charset=euc-jp" />
+<title>w3cとアクセシビリティとバリデーションによってサイトを構築する</title>
+
+<!-- CSS JavaScript -->
+<link href="css/import.css" rel="stylesheet" type="text/css" /><!--これが骨格-->
+<style type="text/css"> /*これは各コンテンツごとのCSS*/
+
+/* グローバルナビ
+================================= */
+#globalnavi ul li a#gnavi_li3, #globalnavi ul li a#gnavi_li3:hover {
+	background: #222222;
+	background: -webkit-gradient(linear,left top,left bottom,
+		from(#222222),color-stop(50%,#444444),color-stop(50%,#444444),to(#222222) );/*1世代前のwekit*/
+	background: -webkit-linear-gradient(#222222 0%, #444444 50%, #444444 51%, #222222 100%); /*Safari, Chrome*/
+	background: -moz-linear-gradient(#222222 0%, #444444 50%, #444444 51%, #222222 100%); /*Firefox*/
+	background: -o-linear-gradient(#222222 0%, #444444 50%, #444444 51%, #222222 100%); /*Opera*/
+	background: -ms-linear-gradient(#222222 0%, #444444 50%, #444444 51%, #222222 100%); /*IE*/
+}
+
+
+
+#mainTopic {
+	background-image: url(img/contents/back/human.png);
+	background-repeat: no-repeat;
+	background-position: 480px -100px;
+	background-size:580px 450px;
+}
+
+/* コンテンツ
+================================= */
+#contents h3 {
+	margin-bottom: 30px;
+}
+
+#contents span.h4 {
+	padding-left: 5px;
+	font-size: 1.2em;
+	color: #00AAFF;
+	border-left: solid 25px #99FF99;
+}
+
+#contents p {
+	margin-bottom: 50px;
+}
+
+#contents p a {
+	color: #FF0099;
+	text-decoration: none;
+}
+
+#contents p a:hover {
+	text-decoration: underline;
+}
+
+/* パンくず
+================================= */
+#bread span a{
+	padding-right: 25px;
+}
+
+
+
+
+</style>
+<script type="text/javascript" charset="EUC-JP" src="smoothscroll.js"></script><!--JS for link scroll-->
+<script type="text/javascript" charset="EUC-JP" src="box_link.js"></script><!--JS for link box-->
+<!-- CSS JavaScript -->
+
+</head>
+<body class="jikken" id="link_3">
+<div id = "document">
+
+
+		<div id = "header">
+			<h1>
+			<img src="img/header/header_1.png" alt="正式なWebSite構築 方法" width="750px" height="85px"/>
+			</h1>
+		<!-- /#header --></div>
+		
+		
+		
+		
+		<div id = "globalnavi">
+			<ul>
+				<li><a href="index.html" id="gnavi_li1">Home</a></li>
+				<li><a href="link_2.html" id="gnavi_li2">W3C</a></li>
+				<li><a href="link_3.html" id="gnavi_li3">Accessibility</a></li>
+				<li><a href="link_4.html" id="gnavi_li4">Validation</a></li>
+				<li><a href="link_5.html" id="gnavi_li5">Think</a></li>
+			</ul>
+		<!-- /#globalnavi --></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id = "mainTopic">
+				<div id = "contents">
+						<h2>
+							<img src="img/contents/h2/accessibility.png" alt="アクセシビリティ（accessibility）" width="750px" height="290px"/>
+						</h2>
+						
+						
+						<h3>アクセシビリティとは</h3>
+						<p>
+						Webアクセシビリティとは、障害を持つ人々がWebを使用できることを意味します。具体的には、Webアクセシビリティとは、障害を持つ人々がページを知覚し、理解し、ナビゲートし、それらが障害を持つ人々やその他のユーザに貢献できることができることを意味します。（引用：WAI）
+						<br />今回は、日本の「<a href="http://waic.jp/">ウェブアクセシビリティ基盤委員会</a>」が出している<a href="http://waic.jp/docs/WCAG20/Overview.html">「W3Cのウェブ・コンテンツ・アクセシビリティ・ガイドライン」の翻訳</a>を参考に作成させていただきました。そして、Web作成に当たって重要だと思う物を自分なりに解釈しまとめました。この機会にアクセシビリティに特化したWebページを皆様が作っていただければと思います。
+						（ガイドライン2.1はその項目がWebページ作成では解決できない内容だったために省きました。）
+						</p>
+						
+						
+						
+						
+						<h3>原則1 知覚可能</h3>
+						<p><span class="h4">画像、音声、映像には代替テキストを</span>
+						<br />まず、写真や文字画像の作成に当たって気をつけないといけない事があります。例えば、目の不自由な人や高齢者などにとって、Webページでテキストのないコンテンツ（写真や文字画像）は、知覚できないことがあります。そのとき、代替テキスト（alt="代替テキスト"）を作って置けば、目の不自由な人や高齢者が必要とする形式（音声ブラウザなど）に変換でき、利用しやすくなります。つまり私が思うにalt=""のなかに、キーワードではなくその写真や文字画像をイメージできるような文章を入れておけば、良いアクセシビリティになるのではないかと思います。同様に、音声や映像にも代テキスト替テキストを用意するようにしましょう（参考：ガイドライン1.1, 1.2）
+						</p>
+
+
+						<p><span class="h4">シンプルなレイアウトを</span>
+						<br />そして、シンプルなレイアウトで提供できるようなコンテンツの制作についても重要です。画面を見ている利用者は、様々な視覚的手がかりによって構造を知覚します。例えば、見出しは太字のフォントでは次の段落とはスペースを空けて表示されています。またリスト項目は、文字の手前に黒点があって、字下げされています。さらに、p要素のように段落と段落の間にはスペースがあります。すなわち、これらの一般的なマークアップ要素ごとの特性を使っていないと、ユーザはそのWebページの構造を知覚しにくくなります。なので、一般的なマークアップ要素の特性を使う事が重要となります。（参考：ガイドライン1.3）
+						</p>
+
+						<p><span class="h4">ユーザに見やすく聞きやすく</span>
+						<br />最後にコンテンツを利用者にとって、見やすくしたり聞きやすくすることに気をつける必要があります。たとえば、リンクなどのようなユーザの反応を促す、もしくは視覚的な要素がページにある場合、色だけを使用するのはよくありません。なぜなら、色弱の利用者はその色が分からないかもしれないからです。（参考：ガイドライン 1.4）
+						</p>
+
+
+
+
+
+						<h3>原則2 操作可能</h3>
+						<p><span class="h4">ユーザに記事を読む時間を与える</span>
+						<br />まず、利用者がコンテンツを読んだり使用したりするのに十分な時間を与えることが重要です。点滅やJavaScriptによる動きは、動かないテキストを素早く読むのが困難な利用者や動きのあるオブジェクトを目で追うのが困難な利用者にとっての障壁となることがあります。ですので、点滅はなるべく使わず、JavaScriptによる動きは臨機応変に使う事が望ましいと思います。（参考：ガイドライン 2.2）
+						</p>
+
+						<p><span class="h4">発作を引き起こす恐れのあるコンテンツ</span>
+						<br />次に、発作を引き起こす恐れのあるコンテンツは気をつけないといけないと行けません。もしも、ページ内に閃光（瞬間に発する光）がある場合、光過敏性発作を引き起こす恐れがあります。点滅が1秒間に3回以上の頻度で起こるものは閃光と言えます。点滅が使いたい場合でも、閃光には注意して作るようにしましょう。（参考：ガイドライン 2.3）
+						</p>
+
+						<p><span class="h4">ユーザをナビゲーションする</span>
+						<br />次に、ユーザが簡単にコンテンツを探し出したり、現在位置を確認できるようにサイトを作らなければなりません。例えば、わかりやすいページタイトルをつけることでユーザがすぐに理解できます。さらに、コンテンツ内を一つずつ順を追って行き来しているユーザがWebページのメインコンテンツへ直接移動できるようにしたり、ユーザがフォーカスをページの先頭に戻すことのできるスキップできるようにしなければなりません。（ただし、Webページ下部でナビゲーションを提供している場合は「スキップ」リンクを提供する必要はありません。）（参考：ガイドライン 2.4）
+						</p>
+
+
+
+
+
+
+
+						<h3>原則3 理解可能</h3> 
+						<p><span class="h4">一般的でない用語や略語は説明をつける</span>
+						<br />まず、テキストのコンテンツを読みやすくすることに気をつける必要があります。例えば、一般的でない用語や略語を用いる場合、ユーザにどういう意味なのか理解してもらわなくてはWebページを作る側はページを作っている意味がありません。つまり、複雑な文章を理解しやすくするために、補足的コンテンツを提供することが大事です。（参考：ガイドライン 3.1）
+						</p>
+
+						<p><span class="h4">表示や動作を予測可能に</span>
+						<br />次に、ウェブページの表示や動作を予測可能にすることが大事です。例えば自動的に開く新しいウィンドウ、リストから項目を選択すると自動的に送信されるフォームなどのように、予期しない状況の変化によって混乱が引き起こされる可能性があるので、このような予期できない項目は入れない方が良いです。（参考：ガイドライン 3.2）
+						</p>
+						
+						<p><span class="h4">ユーザの間違いを最小限に</span>
+						<br />最後に、ユーザの間違いを防ぎ、ユーザの間違いを減らすことに気をつけなくてはなりません。例えばメールなどを送信する為のフォームの作成にあたって、情報を入力するためのシンプルな説明文と手がかりを提供することで、よいユーザーインタフェースデザインになります。ある種の障害のあるユーザは、障害のないユーザよりもミスをしてしまうことが多かったり、エラーを修正するのがより困難であったりするため、ミスをさせないようにページを作ることが大切です。さらに言うなら、フォームを間違って送信した後にでも、ユーザが書いた情報を書き換える機能があれば、ユーザのミスをなくす事が出来ます。（参考：ガイドライン 3.3）
+						</p>
+						
+						
+						
+						
+						<h3>原則4 堅牢性（予期しないエラーに対応できるように）</h3>
+						<p><span class="h4">ソースコードの文法をチェックしよう</span>
+						<br />マークアップ言語（HTML,XHTML）は、要素には完全な開始タグ及び終了タグがあって、要素は仕様に準じて入れ子になっていて、要素には重複した属性がなく、どのIDも別の名前があるように作らなくてはなりません。ユーザーの中には、独自の「修復技術」を用いて品質の低いソースコードのコンテンツを描画するユーザもいます。もし文法エラーがある場合、そのユーザはそのWebページを修復し、解析できなくなります。文法チェックが面倒な方はW3Cのバリデーション機能を使う事をおすすめします。（参考：ガイドライン 4.1）
+						</p>
+						
+						
+						
+				<!-- /#contents --></div>
+		<!-- /#mainTopic --></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="localnavi">
+				<div class = "lnavi_links">
+						<h3>W3C</h3>
+						<img src="img/localnavi/printer.png" alt="W3C（World Wide Web Consortium）" width="130px" height="110px"/>
+						<p>
+							W3CはWWWで利用される技術の標準化をすすめる団体で、1994年10月に発足しました。<br />
+							<span class ="syosai">さらに、詳しく</span>
+						</p>
+						<p class="fullstory"><a href="link_2.html"></a></p>
+				<!-- /.lnavi_links --></div>
+			
+			
+				<div class = "lnavi_links">
+						<h3>Accessibility</h3>
+						<img src="img/localnavi/use.png" alt="アクセシビリティ（Accessibility）" width="130px" height="110px"/>
+						<p>
+						アクセシビリティは障害を持つ人々がWebを使用できることを意味します（WAIより）。<br />
+						<span class ="syosai">さらに、詳しく</span>
+						</p>
+						<p class="fullstory"><a href="#mainTopic"></a></p>
+				<!-- /.lnavi_links --></div>
+		
+		
+				<div class = "lnavi_links">
+						<h3>Validation</h3>
+						<img src="img/localnavi/jikken.png" alt="バリデーション（Validation）" width="130px" height="110px"/>
+						<p>
+							企業サイト、個人サイトなど、あらゆるサイトをW3Cの提供するサービスで検証してみました。<br />
+							<span class ="syosai">さらに、詳しく</span>
+						</p>
+						<p class="fullstory"><a href="link_4.html"></a></p>
+				<!-- /.lnavi_links --></div>
+		<!-- /#localnavi --></div>
+
+
+		
+		
+		<div id = "bread">
+					<span><a href="index.html" >Home</a></span>
+					<span><a href="#mainTopic" >Accessibility</a></span>
+		<!-- /#bread --></div>
+			
+			
+			
+			
+			
+		<div id = "footer">
+			<div class = "foot_navi">
+				<a href="index.html" >Home</a>
+				<ul>
+					<li>当サイトご利用にあたって</li>
+					<li>Web作成に使ったソフト</li>
+					<li>当サイトの信頼性</li>
+				</ul>
+			<!-- /.site_navi --></div>
+			
+			<div class = "foot_navi">
+				<a href="link_2.html" >W3C</a>
+				<ul>
+					<li>W3Cとは</li>
+					<li>Markup検証サービス</li>
+					<li>CSS検証サービス</li>
+				</ul>
+			<!-- /.site_navi --></div>
+			
+			<div class = "foot_navi">
+				<a href="#mainTopic" >Accessibility</a>
+				<ul>
+					<li>アクセシビリティとは</li>
+					<li>原則1 知覚可能</li>
+					<li>原則2 操作可能</li>
+					<li>原則3 理解可能</li>
+					<li>原則4 堅牢性</li>
+				</ul>
+			<!-- /.site_navi --></div>
+			
+			<div class = "foot_navi">
+				<a href="link_4.html" >Validation</a>
+				<ul>
+					<li>Validationとは</li>
+					<li>Webサイトを検証する</li>
+					<li>結果</li>
+				</ul>
+			<!-- /.site_navi --></div>
+			
+			<div class = "foot_navi">
+				<a href="link_5.html" >Think</a>
+				<ul>
+					<li>考察</li>
+					<li>感想</li>
+					<li>参考文献</li>
+				</ul>
+			<!-- /.site_navi --></div>
+			
+			
+			<hr />
+			
+			
+			<div id="check">
+				<p>
+					<a href="http://validator.w3.org/check?uri=referer">
+						<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+					</a>
+				</p>	
+			
+			
+				<p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+						<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="正当なCSSです!" />
+					</a>
+				</p>
+			
+				<p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+						<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="正当なCSSです!" />
+					</a>
+				</p>
+				<address>Copyright &copy; 2012 TasukuTAKAHASHI All Rights Reserved.</address>
+			</div>
+			
+			
+		<!-- /#footer --></div>
+		
+		
+		
+<!-- /#document --></div>		
+</body>
+</html>

@@ -1,0 +1,153 @@
+/* 
+===================================== 
+
+	style.css
+
+===================================== */
+
+
+body {
+    background: #FFF url(../images/bodyBackground.png) no-repeat;
+	background-position: -15px 20px;
+	background-size: 100% 720px;
+}
+
+
+
+
+/* グローバルナビ
+================================= */
+#globalnavi {
+	/*グラデーション*/
+    background: #FFF url(../images/menuBar.png) no-repeat;
+    background-size:100% 100%;
+	box-shadow: 1px 1px 5px #000;
+}
+
+/* clearfix! */
+#globalnavi:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+#globalnavi ul {
+	list-style-type: none;
+}
+
+#globalnavi ul li a {
+	float: left;
+	display: block;
+	color: #000;
+	line-height: 40px;
+	font-family: 'arial unicode ms';
+	text-decoration: none;
+	text-align: center;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+body#report03 #globalnavi ul li a#gnavi_link1,
+body#when #globalnavi ul li a#gnavi_link2,
+body#ikimono #globalnavi ul li a#gnavi_link3,
+body#carry #globalnavi ul li a#gnavi_link3,
+body#mina #globalnavi ul li a#gnavi_link3,
+body#anan #globalnavi ul li a#gnavi_link3,
+body#earth #globalnavi ul li a#gnavi_link3 {
+    text-decoration: underline;
+}
+
+
+#globalnavi ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* コンテンツ
+================================= */
+#contents {
+	margin-top: 90px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 50px 65px;
+	width: 645px;
+    background: #FFF url(../images/contentsBackground.png) repeat-y;
+	background-position: 0px 0px;
+	background-size: 100% 140%;
+	border-radius: 20px;
+	box-shadow: 0px 2px 3px #CBCBCB,
+				0px 0px 4px 2px rgba(255,255,255,0.7) inset,
+				0px 0px 4px 2px rgba(0,0,0,0.5);
+}
+
+/* clearfix! */
+#contents:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+#contents h1 {
+	padding-left: 0px;
+	padding-bottom: 20px;
+	font-size: 2.7em;
+    color: #000;
+    text-shadow: 2px 2px 5px #FFF; 
+}
+
+#contents p {
+    color: #000;
+	font-size: 1.2em;
+	line-height: 1.7;
+}
+
+#contents img {
+	margin-left: 20px;
+	float: right;
+	border-radius: 20px;	
+}
+
+#contents a {
+	color: #00FFFF;
+	padding-left: 10px;
+}
+
+#contents a:hover {
+	color: #00AAAA;
+}
+
+
+
+
+
+
+
+
+
+/* フッター
+================================= */
+#footer {
+    color:#444;
+    font-size:1.1em;
+    margin-top:10px;
+    margin-bottom:50px;
+}
+
+#footer address {
+    text-align:center;
+}
+
+
+

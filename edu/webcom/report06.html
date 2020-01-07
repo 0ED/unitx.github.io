@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head> 
+    <!-- 文字エンコーディング -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Tasker☆net</title>
+   
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net,オープンソース,ソフトウェア" />
+    <meta name = "description" content="Tasker☆net" />
+        
+    <!-- CSS -->
+    <link href="report06/css/import.css" rel="stylesheet" type="text/css" />
+    <link href="report06/css/slider/anythingslider.css" rel="stylesheet" type="text/css" />
+    <link href="report06/css/slider/myslider.css" rel="stylesheet" type="text/css" />
+
+
+	<!--<link href="css/slider/theme-metallic.css">
+	<link href="css/slider/theme-minimalist-round.css">
+	<link href="css/slider/theme-minimalist-square.css">
+	<link href="css/slider/theme-construction.css">
+	<link href="css/slider/theme-cs-portfolio.css">-->
+
+    <!-- JS -->
+    <script type="text/javascript" src="report06/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="report06/jquery/jquery.anythingslider.js"></script>
+    <script type="text/javascript" src="report06/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="report06/js/myAccordion.js"></script>
+	<script type="text/javascript">
+        $(function() {
+        	/* Accordion（アコーディオン） */
+			var accordion = $( "#accordion" );
+			
+			/* スライダー */
+			$("slider").anythingSlider({ 
+				width          	: 800,
+				height         	: 280,
+				buildNavigation	: false,
+				buildStartStop	: false,
+				autoPlayLocked	: true,
+				enableKeyboard	: false,
+			});
+			$("#slider").anythingSlider();
+		});
+	</script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="report06/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="report06/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="report06/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'report06/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="report06/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="report06/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="webcom" id="report06">
+	<div id="accordion">
+		<header id="accordion-section" style="overflow: hidden;">
+			<div id="header-contents">
+				 <div id="header-logo">
+				 	<h1>Tasker☆net</h1>
+				 </div>
+		         <ul id="header-global-nav">
+			     	<li>
+		                <h2>オープンソース</h2>
+			            <ul>
+			               	<li><a href="#">C言語</a></li>
+			               	<li><a href="#">Java</a></li>
+			               	<li><a href="#">Python</a></li>
+			               	<li><a href="#">Smalltalk</a></li>
+						</ul>
+					<!-- オープンソース --></li>
+		                	
+		            <li>
+		                <h2>ホビー</h2>
+			            <ul>
+			               <li><a href="#">数学</a></li>
+			               <li><a href="#">哲学</a></li>
+						</ul>
+					<!-- ホビー --></li>
+		                	
+					<li>
+		                <h2>授業</h2>
+						<ul>
+			            	<li><a href="#">ソフトウェア工学Ⅱ</a></li>
+				            <li><a href="#">Webコンピューティング</a></li>
+						</ul>
+		           <!-- 授業 --></li>
+		                	
+		         </ul>
+			 <!-- /#header-contents --></div>
+	     </header>
+	
+	     <nav>
+			 <div id="local-nav">
+				 <ul>
+					 <li><a href="#">C言語</a></li>
+					 <li><a href="#">Java</a></li>
+					 <li><a href="#">Python</a></li>
+					 <li><a href="#">Smalltalk</a></li>
+				</ul>
+				<a href="#" onClick="myAccordion()">Tasker☆net</a>
+			<!-- /#local-nav --></div>
+	     </nav>
+	<!-- /#accordion --></div>
+        
+        
+        
+    <div id="contents">
+		<ul id="slider">
+				<li><img src="report06/images/a.jpg" /></li>
+				<li><img src="report06/images/b.jpg" /></li>
+				<li><img src="report06/images/c.jpg" /></li>
+				<li><img src="report06/images/d.jpg" /></li>
+		<!-- /#slider --></ul>
+ 	<!-- /#contents --></div>
+
+	
+	
+</body>
+</html>

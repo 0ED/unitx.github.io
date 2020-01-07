@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title> 
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、開発計画。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜開発計画</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>ちっぽけな言語を解析木に翻訳する処理系、もしくは、独自の言語処理系を完成させるための開発計画を立てなさい。</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ちっぽけな言語（変更前！）</span></h5>
+    			<p>
+    			ちっぽけな言語の開発計画におけるガントチャートを以下の図に示します。
+				<a href="pack/images/smallLanguage.png">
+    				<img src="pack/thumbnails/smallLanguage.png" alt="ちっぽけな言語" />
+				</a>
+    			</p>
+	    		
+				<h5><span class="for_inline_of_h5">Paladin（変更前！）</span></h5>
+    			<p>
+    			Paladinの開発計画におけるガントチャートを以下の図に示します。
+    			<a href="pack/images/paladin.png">
+	    			<img src="pack/thumbnails/paladin.png" alt="Paladin" />
+	    		</a>
+    			</p>
+    			
+    			<p>
+    			　下のガントチャートが変更したものです。
+    			</p>
+    			
+    			
+    			<h5><span class="for_inline_of_h5">ちっぽけな言語（変更後）</span></h5>
+    			<p>
+				　ちっぽけな言語の開発計画におけるガントチャートを以下の図に示します。
+				<a href="pack/images/smallLanguage_2.png">
+				<img src="pack/thumbnails/smallLanguage_2.png" alt="ちっぽけな言語" />
+				</a>
+				</p>
+				
+				<h5><span class="for_inline_of_h5">Paladin（変更後）</span></h5>
+    			<p>
+    			Paladinの開発計画におけるガントチャートを以下の図に示します。
+    			<a href="pack/images/paladin_2.png">
+	    			<img src="pack/thumbnails/paladin_2.png" alt="Paladin" />
+	    		</a>
+    			</p>
+    		</div>
+    	</section>
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">    
+				<h5><span class="for_inline_of_h5">ディストリビューション</span></h5>
+				<p>
+				　今日Yamato#メンバが集まって問題を解いておられたので、ちょうど福田さんに会ってガントチャートについて話していたら、まさかのその日にちっぽけな言語をリリースさせていたので、さすがだなと思いました。もっと多くの人と関わって、1段1段、段階を上がれるように頑張ろうと改めて思います。それから、ICPCでの予選を上がり、アイズ大会へと出てすばらしいプログラマと交流できるように努力します。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">Paladin</span></h5>
+				<p>
+				　どこまで出来るかはわかりませんが、以前にも書いた通り、Python, Rubyに近い言語になるかと思います。3ヶ月前に字句解析器を作って、しばらく言語開発の方に勢力をいれていなかったので、この2週間がんばろうと思います。
+				</p>
+
+			</div>
+	    </section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

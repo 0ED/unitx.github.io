@@ -1,0 +1,64 @@
+/* 
+===================================== 
+
+	header.css
+
+===================================== */
+
+
+header {  
+	height: 0px;
+	background-color: white; 
+}
+
+
+div#header-logo, ul#header-global-nav {
+	float: left;
+}
+
+div#header-logo {
+	margin-right: 10px;
+}
+
+div#header-logo h1 {
+    font-size: 2.7em;
+}
+
+ul#header-global-nav {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+ul#header-global-nav > li { 
+	float: left;
+	margin-left: 10px; /*この2つで、リンク幅を調節*/
+	padding-left: 10px;
+	border-left: 1px dashed #FFF;
+}
+
+ul#header-global-nav > li:first-child { 
+	margin:0px;
+	border-left: none;
+}
+
+ul#header-global-nav > li > h2 {
+	font-size: 1.0em;
+}
+
+ul#header-global-nav > li > ul {
+}
+
+ul#header-global-nav > li > ul > li {
+}
+
+ul#header-global-nav > li > ul > li > a {
+	line-height: 20px;
+	font-size: 0.8em;
+}
+
+
+
+
+
+
+

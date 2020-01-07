@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、OOP。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜LP 経路探索</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>経路探索のプログラムを論理プログラミングしなさい。（Prologで実装しなさい。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ソースコード</span></h5>
+				<pre class="brush: java; highlight: [36,37,38,41,42,43]">
+					?- remove.
+					connect(entrance,a).
+					connect(a,b).
+					connect(a,h).
+					connect(b,c).
+					connect(b,i).
+					connect(c,j).
+					connect(d,e).
+					connect(d,k).
+					connect(e,f).
+					connect(f,g).
+					connect(f,m).
+					connect(h,i).
+					connect(h,o).
+					connect(i,j).
+					connect(j,k).
+					connect(j,q).
+					connect(k,l).
+					connect(k,r).
+					connect(m,n).
+					connect(m,t).
+					connect(p,w).
+					connect(r,y).
+					connect(s,t).
+					connect(s,z).
+					connect(t,u).
+					connect(v,w).
+					connect(w,x).
+					connect(x,y).
+					connect(v,exit).
+					connect(z,exit).
+					
+					route(exit,P,R) :- reverse(P,R).
+					
+					route(X,P,R) :- 
+					    connect(X,T),
+						not(member(T,P)),
+						route(T,[T|P],R).
+						
+					route(X,P,R) :- 
+						connect(T,X),
+						not(member(T,P)),
+						route(T,[T|P],R).
+						
+					route(R) :-
+						route(entrance,[entrance],R).
+					
+					?- route(X). </pre><br />
+				
+    			<h5><span class="for_inline_of_h5">実行結果</span></h5>
+				<pre class="brush: java;">
+					yes
+					?- route(X).
+					X = [entrance,a,b,c,j,k,r,y,x,w,v,exit] ;
+					X = [entrance,a,b,c,j,k,d,e,f,m,t,s,z,exit] ;
+					X = [entrance,a,b,i,j,k,r,y,x,w,v,exit] ;
+					X = [entrance,a,b,i,j,k,d,e,f,m,t,s,z,exit] ;
+					X = [entrance,a,h,i,j,k,r,y,x,w,v,exit] ;
+					X = [entrance,a,h,i,j,k,d,e,f,m,t,s,z,exit] ;
+					X = [entrance,a,h,i,b,c,j,k,r,y,x,w,v,exit] ;
+					X = [entrance,a,h,i,b,c,j,k,d,e,f,m,t,s,z,exit] ;
+					no </pre>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">論理プログラミング</span></h5>
+				<p>
+				　論理プログラミングしてみて、route(X,P,R)の文に関して、今まで使ってきたプログラミング言語とは違い、引数の型の種類および数が同じであるのに、プログラムが解析されている。この辺りの意味解析の方法はかなり不思議に思いました。それから、Cでいうif, elseが一行で表現されていて、新しい言語を作る上でうまく利用できないかなあと思いました。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">プログラムの未来系「対話」</span></h5>
+				<p>
+				　Prologは対話を重点的に意識した言語だなあと思います。例えば、プログラム実行中に「よろしいですか？」と問いかける部分など、人間とプログラムが繋がってきていると思います。最近になって、プログラミング言語Paladinを作ったり、Prolog, Python, Rubyを使って行くなかで、徐々にプログラムとの対話に関して真剣に考えるようになってきました。僕が思うに、将来というよりも、未来ではプログラマはかなり減少して、プログラムと人間が対話して、人間との対話によってプログラミングが成り立つという時代に変わると思います。すなわち、対話こそがプログラミングの未来系だと思います。そして、Prologも新たな言語のideaとして参考にしようと思いました。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">「対話」のデメリット〜対話を考える〜</span></h5>
+				<p>
+				　ただ、デメリットがあるとも思います。それを最近頭の中で考えていたのですが、もし対話が成り立ちプログラムがプログラムを書き換えることになった場合、人間のような振る舞いを見せたなら、人間に起きていることがコンピュータに起こると思います。つまり、人間が事故で脳の一部分を損傷したり、遺伝子的、神経的変異が起きて、普通でなくなる可能性がある。もし、プログラムでそれが起こったなら、WWWにも多大な影響を起こしますし、様々な分野で問題が発生します。なので、どこまでの対話を実現し、対話によって、どこまでのことをプログラムにさせるかは、しっかり見積もらなくてはならないと思いました。
+				</p>
+
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

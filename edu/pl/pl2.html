@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、実行方式。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜実行方式</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>プログラムをバージョン管理しながら書き下ろし、コンパイルし、リンクし、実行するという古典的な実行方式が明らかになったと思います。以下の術語を用いて、その過程をモダンな実行方式と比較し、具体的に記述してください。（svn, make gcc, bash, java）</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">イントロダクション</span></h5>
+				<p>
+				モダンな実行方式と古典的な実行方式を比較すると、大きく2つの点で異なっていると私は考える。1点目は仮想マシンに関すること、2点目は動的ライブラリに関することである。また、詳細は「時代は仮想マシン」、「時代は動的ライブラリ」に示す。
+				</p>
+    		
+    			<h5><span class="for_inline_of_h5">時代は仮想マシン</span></h5>
+    			<p>
+    			モダンな実行方式と古典的な実行方式の両方に共通する点は、バージョン管理システムsvn（git,hgなど）でソースコードを管理し、makeを使用することでGNUのコンパイラ（gcc）が呼び出され、複数のソースコードをコンパイルし、複数のバイナリファイルを生成すること。おそらくそこまでは共通する点だろう。しかし、古典的な実行方式ではコンパイルしてはかれたバイナリファイルをmakeによってリンク（gcc -Wall *.o -o hogehoge）させるのに対して、モダンな実行方式では仮想マシンのリンカによってリンクさせる（たぶん）。このことによって、モダンな実行方式では複数のOSに対応できる。これがモダンな実行方式と古典的な実行方式の違いの1つだと考える。ちなみに、モダンな実行方式としてiOS,Androidにも対応する仮想マシンも数多く出て来ている。
+    			</p>
+    			
+	      		<h5><span class="for_inline_of_h5">時代は動的ライブラリ</span></h5>
+    			<p>
+				結論から言うと、モダンな実行方式では動的ライブラリを使い、古典的な実行方式では静的ライブラリを使う。例えば、bashによってプログラムのバイナリファイルをメモリにロードするとき、古典的な実行方式では静的なライブラリが取り入れられていたため、ライブラリの仕様が変更されたり、ライブラリに致命的なセキュリティホールが見つかった場合、一旦再起動されるか、ライブラリの仕様が変更される前のバイナリコードが実行されてしまい、脆弱性のあるプログラムとなりかねない、しかし、モダンな実行方式では動的なライブラリが取り入れられているため、一旦プログラムをメモリにロードしている状態でライブラリの変更を行ったとしても、ライブラリはメモリにロードされているスタックの断片に置かれるため、再起動もしなくとも、ライブラリ変更を容易に出来る。そのため、モダンな実行方式では動的ライブラリを使い、古典的な実行方式では静的ライブラリを使う。
+    			</p>
+    			
+    		</div>
+    	</section>
+        
+    	<section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">リフレクション</span></h5>
+    			<p>
+    			「じゅん for Smalltalk」がリフレクションしているデモをソフトウェア工学Ⅱで見たとき正直驚きでしたし、もっと使われたら良いのにと思っていました。そして、あの頃から現在に至るにあたって、よくリフレクションしているソフトウェアを見て来ました。例えば、3DGameEnginのblenderです。blenderではプログラム（ソフト）の実行過程でスクリプトを反映させていました。そして、オープンソースライブラリKivyなど、リフレクションのすばらしさを感じました。これから、リフレクションを利用してコーディングしていきたいです。
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">リフレクション〜プログラムの進化〜</span></h5>
+				<p>
+				「プログラムは進化できる」という言葉を聞いて思い出しました。それはいわゆる映画ターミネーターのスカイネットです。僕はSF映画又はドラマに影響されすぎているかもしれませんが、このターミネーターの人工知能もある意味リフレクションだと思います。学習を繰り返し特異点が出現することによって、自らプログラムを書き換え、自ら自己修復し、自ら進化をする。そうなれば人類は滅びますが、いずれリフレクションを行うプログラムが普通になるのかなあと思いました。
+    			</p>
+				
+				<h5><span class="for_inline_of_h5">機械語</span></h5>
+				<p>
+				機械語を読んでみて、徐々にコンピュータ自体の構造として、プログラムが言語によって書かれ、その言語も機械語という言語で書かれ、どんどん内包されていく部分が見えていくようで、個人的に面白かったです。そして、思ったよりも難しいものではなく、がんばればコンピュータの構造がある程度わかるのでないかと思いました。
+    			</p>
+    		</div>
+    	</section>
+    	
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

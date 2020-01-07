@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、字句解析の小テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜字句解析の小テスト</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>正規表現部（%%と%%の間だけ）を貼付けてください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">rexp.lexの断片</span></h5>
+    			<pre class="brush: cpp;">
+					"int"					{ return(INT); }
+					"float"					{ return(FLOAT); }
+					"print"					{ return(PRINT); }
+					[a-zA-Z_][a-zA-Z0-9_]*	{ return(ID); }
+					[0-9]+					{ return(INTEGER); }
+					[0-9]+"."[0-9]+"f"*		{ return(REAL); }
+					";"						{ return(SEMICOLON); }
+					","						{ return(COMMA); }
+					"="						{ return(EQUAL); }
+					"+"						{ return(ADD); }
+					"-"						{ return(SUBTRACT); }
+					"*"						{ return(MULTIPLY); }
+					"/"						{ return(DIVIDE); }
+					"("						{ return(LPAR); }
+					")"						{ return(RPAR); }
+					[\r\n \t]				{ }
+					[/*].*[*/]				{ }
+					.						{ return(UNKNOWN); }
+    			</pre>
+				<h5><span class="for_inline_of_h5">LEXERに関する補足</span></h5>
+				<p>
+				　今回の字句解析器の字句は、<a href="http://docs.python.org/2/library/token.html">こちら</a>を参考にしながら命名しています。そして上のrexp.lexに関して、字句として判別するべき特殊文字は他にもありますが、仕様はないので、今回はsrc.txtに対応する特殊文字のみを扱っています。
+				</p>
+    		</div>
+    	</section>
+    	
+        <section>
+			<h4>字句解析生成系とは何かを千文字でまとめてください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">字句解析生成系</span></h5>
+				<p>
+				　字句解析生成系とは、文字入力ストリームの字句を処理するために一般向けに設計されたプログラムである。そして、プログラマの書いた正規表現を解析し、それを決定性有限オートマトンに解釈して、字句解析器を出力するものである。今回の場合はlex,flexが字句解析生成系に当たる。つまり、前回の「正規表現と自動人形」では、正規表現を非決定性有限オートマトンの図として表した後に、決定性有限オートマトンを導き、今回の「字句解析生成系」では、決定性有限オートマトンを字句解析器のプログラムに変えた。
+				</p>
+				<h5><span class="for_inline_of_h5">字句解析生成系を作る意図</span></h5>
+				<p>
+				　ではなぜ字句解析生成系が作られたか、それは字句解析器をオートマトン的に最適に保つためであると同時に、字句解析器を作る手間を省くためであることが挙げられる。オートマトンを最適に保つことによって、字句（トークン）のチェック不足をなくし、プログラムの不具合がないことを保証することができる。そして、各プログラミング言語の字句解析器によって字句解析の方法が変わるが、その場合でも再度字句解析器を作ることなく、再利用して使うことが出来る。例えば、C言語ではブレイスを一つの文脈を囲うものだと字句が解釈されるが、Pythonでは辞書だと解釈される。このように解釈を変えるだけで、字句が変わってしまうのを字句解析生成系は解決してくれる。
+				</p>
+				<h5><span class="for_inline_of_h5">プログラミング言語</span></h5>
+				<p>
+				　次に、これまでのコンパイラコンパイラと同様、このLEX（字句解析生成系）もまた言語であると考えることができる。そして、コンパイラコンパイラはあらゆる解析を最適にかつ使いやすくするために使われ、言語処理系が次々と作られていっているということから、字句解析生成系だけでなく、次の構文解析の工程においてもコンパイラコンパイラが作られていると予測する。
+				</p>
+				<h5><span class="for_inline_of_h5">自然言語</span></h5>
+				<p>
+				　また、字句解析生成系は多くの言語にサポートされ、コンパイラ・インタプリタとしての使い方だけでなく、文字列解析であるなら、どんなものでも解析できると考えられる。例えば、自然言語において、Webページのデータから文字列を抽出した場合、接続詞が無数つづく可能性もあれば、形容詞と副詞が複雑に絡み合う可能性がある。通常なら、複雑なプログラムを組むことになるが、こんな場合でも字句解析器を作れるのが、字句解析生成系のすばらしい点であり、さまざまな文字列パターンマッチングに使うことが出来る。
+				</p>
+			</div>
+    	</section> 	
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">レクサ（字句解析生成系）</span></h5>
+				<p>
+				　直感的な書き方によって、文字列の解析使うことの出来るレクサの使い勝手がすごくよく、改めてレクサの便利さを感じました。そして、最近になってmecabを再び使う機会があり、あることに使っているのですが、mecabでもこのレクサがおそらく使われているかもしれません（機械学習によって字句の情報を求めたデータを基に、パターンマッチングを用いて分割）。そのmecabをどういうことに使おうと思ったかというと、mecabと正規表現によって、ページを解析することによって、企業の情報を集めようというもので、ソフトウェア工学Ⅱで習った「会社の見分け方」の"年間売り上げ＞（資本金×10） && 年間売り上げ÷社員数＞1000万円"という式のもと、解析しようと考えています。ページを解析するだけのプロトタイプは出来ていて、いずれしっかりとした実装をしようと考えています。
+				</p>
+			</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

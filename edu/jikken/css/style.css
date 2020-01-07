@@ -1,0 +1,429 @@
+/* ====================================
+	
+	所々、CSSの要素が空っぽのところがあるが、これはわかりやすくするために
+	あえて入れている。（ちなみに、この方法は牧野工房というWEBコーディング専
+	門の会社の方法を利用している。）
+	
+	http://waic.jp/docs/jis2010-understanding/#h2_Resources
+	
+	
+===================================== */
+
+
+
+
+
+/* 大枠
+===================================== */
+
+html {
+}
+
+body {
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+#header,#globalnavi ul,#siteVisual,#mainTopic,#contents,#localnavi,#bread,#footer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header,#siteVisual,#mainTopic,#bread,#footer  {
+	width: 948px;
+}
+
+#localnavi {
+	width: 950px;
+}
+
+
+body {
+	background: #E6E6E6; /*Gray*/
+}
+#siteVisual,#mainTopic,#bread,#footer {
+	background: #FFFFFF; /*white*/
+}
+
+
+
+
+
+
+
+
+
+/* ヘッダー
+================================= */
+#header {
+	margin-bottom: 10px;
+}
+
+#header h1 {
+	padding-left: 30px;
+}
+
+#header h1 img {
+}
+
+
+
+
+
+
+
+
+/* グローバルナビ
+================================= */
+#globalnavi {
+	/*グラデーション*/
+	background: #444444; /*クズIE9以下用*/
+	background: -webkit-gradient(linear,left top,left bottom,
+		from(#777777),color-stop(50%,#444444),color-stop(50%,#333333),to(#555555) );/*1世代前のwekit*/
+	background: -webkit-linear-gradient(#777777 0%, #444444 50%, #333333 51%, #555555 100%); /*Safari, Chrome*/
+	background: -moz-linear-gradient(#777777 0%, #444444 50%, #333333 51%, #555555 100%); /*Firefox*/
+	background: -o-linear-gradient(#777777 0%, #444444 50%, #333333 51%, #555555 100%); /*Opera*/
+	background: -ms-linear-gradient(#777777 0%, #444444 50%, #333333 51%, #555555 100%); /*IE*/
+}
+
+/* clearfix! */
+#globalnavi:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+#globalnavi ul {
+	width: 885px;
+	list-style-type: none;
+}
+
+#globalnavi ul li {
+}
+
+#globalnavi ul li a {
+	float: left;
+	display: block;
+	width: 175px;
+	color: #CCCCCC;
+	line-height: 45px;
+	font-family: 'arial unicode ms';
+	text-decoration: none;
+	text-align: center;
+	border-right: solid 1px #777777;
+}
+
+
+#globalnavi ul li a#gnavi_li1 {
+	border-left: solid 1px #888888;
+}
+
+#globalnavi ul li a:hover {
+	background: #333333; /*クズIE9以下用*/
+	background: -webkit-gradient(linear,left top,left bottom,
+		from(#444444),color-stop(50%,#222222),color-stop(50%,#222222),to(#444444) );/*1世代前のwekit*/
+	background: -webkit-linear-gradient(#444444 0%, #222222 50%, #222222 51%, #444444 100%); /*Safari, Chrome*/
+	background: -moz-linear-gradient(#444444 0%, #222222 50%, #222222 51%, #444444 100%); /*Firefox*/
+	background: -o-linear-gradient(#444444 0%, #222222 50%, #222222 51%, #444444 100%); /*Opera*/
+	background: -ms-linear-gradient(#444444 0%, #222222 50%, #222222 51%, #444444 100%); /*IE*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* メイントピック（コンテンツとサブを含んでいる）
+================================= */
+#mainTopic {
+	margin-top: 25px;
+	margin-bottom: 15px;
+	padding-bottom: 50px;
+	border: solid 1px #E0E0E0;
+	border-radius: 5px;
+	box-shadow: 0px 2px 3px #CBCBCB,
+				0px 0px 4px 2px rgba(255,255,255,0.7) inset,
+				0px 0px 4px 2px rgba(255,255,255,0.7) inset;
+}
+
+/* clearfix! */
+#mainTopic:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+/* コンテンツ
+================================= */
+#contents {
+	width: 800px;
+}
+
+#contents h2 { 
+}
+
+#contents h3 {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	padding: 5px;
+	padding-left: 15px;
+	font-size: 1.5em;
+	color: #444444;
+	border-left: solid 8px #AAAAAA;
+	box-shadow: -2px 2px 3px #CBCBCB;
+}
+
+#contents p {
+	font-size: 1.2em;
+	line-height: 1.5;
+	padding-left:60px;
+	padding-right:60px;
+}
+
+
+#contents h2 img{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  ローカルナビ
+================================= */
+#localnavi {
+	margin-bottom: 30px;
+}
+
+/* clearfix! */
+#localnavi:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+/* リンク */
+#localnavi .lnavi_links { 
+	float: left;
+	padding: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	margin-left: 10px;
+	width: 268px;
+	background: #FFFFFF;
+	border: solid 1px #E0E0E0;
+	border-radius: 10px;	
+	box-shadow: 0px 2px 3px 0px #777777 inset;
+	overflow: hidden;
+} 
+
+#localnavi .lnavi_links:first-of-type {
+	margin: 0px;
+}
+
+
+#localnavi .lnavi_links:hover {
+	background: rgba(240,240,240,0.1);
+}
+
+
+#localnavi .lnavi_links h3 {
+	margin: 5px 0px;
+	color: #333333;
+	font-size: 1.1em;
+} 
+
+
+#localnavi p {
+	display: inline;
+	color: #333333;
+	font-size:0.75em;
+}
+
+
+/* さらに詳しくのリンク設定 */
+#localnavi .syosai {
+	color: rgb(0,200,250);
+}
+
+#localnavi :hover p span.syosai {
+	text-decoration: underline;
+} 
+
+#localnavi :visited p span.syosai {
+	color: rgb(0,200,250);
+} 
+/* =================== */
+
+
+#localnavi .lnavi_links img {
+	float: right;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* パンくず
+================================= */
+#bread {
+	line-height: 42px;
+	width: 946px;
+	border-radius: 5px;
+	border: solid 1px #E0E0E0;
+	box-shadow: 0px 2px 3px 0px #AAAAAA inset;
+	
+	background: #FFF url(../img/bread/bread_1.png) no-repeat;
+	background-position: 0px 0px;
+	background-size: 960px 46px;
+}
+
+#bread span a {
+	text-decoration: none;
+	padding-left: 60px;
+	padding-right: 50px;
+	color: #777;
+	font-size: 1.1em;
+}
+
+#bread span a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フッター
+================================= */
+#footer {
+	padding-top: 20px;
+	padding-bottom: 25px;
+	border-radius: 5px;
+	border: solid 2px #E0E0E0;
+	border-radius: 5px;
+	background: #FFF;
+	box-shadow: 0px 2px 3px 0px #AAAAAA inset;
+}
+
+#footer hr {
+	color: #EEE;
+}
+
+#footer .foot_navi  {
+	float: left;
+	margin-left: 45px;
+	margin-bottom: 10px;
+}
+
+#footer .foot_navi ul{
+	list-style-type: none;
+}
+
+#footer .foot_navi ul li {
+	font-size: 0.75em;
+	color: #222;
+	line-height: 1.8;
+}
+
+
+#footer .foot_navi a {
+	text-decoration: none;
+	color: #555;
+	padding: 5px 0px;
+	font-size: 1.5em;
+}
+
+#footer .foot_navi a:hover {
+	text-decoration: underline;
+}
+
+#footer hr {
+	clear: both;
+}
+
+#footer #check {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+
+#footer #check:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+#footer #check p {
+	float: right;
+}
+
+
+#footer #check address {
+	padding:8px 0px;
+	font-size: 0.875em;
+}
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語｜ちっぽけな言語の最終テスト</title> 
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語｜ちっぽけな言語の最終テスト" />
+    <meta name = "description" content="プログラミング言語、ちっぽけな言語の最終テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜ちっぽけな言語</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>make zipを実行して得られる Archive.zip をメールに添付してください。</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">Active.zip</span></h5>
+    			<div align="center">
+		      		<a href="pack/data/Archive.zip">
+			      		<img src="pack/images/zip.png" alt="Archive" /><br/>
+			      		Archive.zip
+		      		</a>
+	      		</div>
+    		</div>
+    	</section>
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">    
+				<h5><span class="for_inline_of_h5">ちっぽけ</span></h5>
+				<p>
+				　ちっぽけな言語を<a href="pl14.html">この前のガントチャート</a>を基に作成したところ、授業で言っておられた通り、失敗しました。この前のガントチャートに置ける各工程の計画としては、構文図式を読み取り、構文解析をすべてやって、字句がわかって、その後に字句解析をすべてやり、make & make srcによって"parser successfully ended"が出るまで確認作業をする。その後、意味解析をするという計画でしたが、それではダメだということに後になって気づきました。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">どうするべきだったか</span></h5>
+				<p>
+				　実際のところ、どこでつまづいたかというと、意味解析の工程です。意味解析をある程度書いて、make & make srcをすると、実行時エラーが出て、かつエラーの箇所がわからないという状態に陥りました。つまり、構文的にはあっているが、src.txtの構文とは合致しないというもので、気づくのが遅すぎたので、バックアップを取って、降り出しに戻り、各文法ごと（例えば stroke rectangle.. , display string.. ）に構文、字句、意味を並行に進めるべきでした。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">Paladin</span></h5>
+				<p>
+				　1月29, 30日辺りまでに、プログラミング言語Paladinを作る予定ですが、Paladinのmain.cによって、構文を読み取り、読み取った結果から、intの容量確保、名前空間の定義などやるとなると、かなり知識が必要で大変なので、もしかしたら、make srcによってtmp.txtに書かれたLisp形式上のテキストデータをPythonに食わせて、実装するかもしれません（TinyVMのように）。
+				</p>
+
+			</div>
+	    </section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

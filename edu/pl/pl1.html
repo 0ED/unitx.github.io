@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、どのフェーズ。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜どのフェーズ</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>皆さんが用いているCコンパイラ（gcc）は約50万行のプログラムです。字句解析、構文解析、意味解析、コード生成、最適化フェーズの中で一番多くの行数を食っているのは、どのフェーズだと思いますか。（そう思う理由も書き添えてください。）</h4>
+    		<div class="Block">
+	      		<h5><span class="for_inline_of_h5">結論</span></h5>
+    			<p>
+    			GNUからgcc4.8.1バージョンをチェックアウトし、実際に見てみました。コードを読むのは不可能だったので、ファイル名による予測、それぞれのフェーズが実際どのような処理を行うかを理解した上での予測から、意味解析ではないかという結論に達しました。（＊どの理由も無理矢理な解釈です。）
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">理由Ⅰ</span></h5>
+    			<p>
+    			理由としてはTreeとつくファイル名が大分多くファイルの容量（行数は計っていません）もある程度大きかったというのと、Go, Java, C, objc(Objective-C?)など、言語に関するフォルダがあったため、多数の言語の意味を解釈するのか？という感じがして、意味解析に重点が言っているのではないかと解釈したためです。
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">理由Ⅱ</span></h5>
+    			<p>
+    			また、かなり無理矢理な解釈ですが、論理的（勘）消去法でも意味解析になりました。理由としては字句解析、構文解析はファイル読み込みと考えれば意外に簡単かもしれないから、×。最適化コード生成もただ出力するだけと解釈すれば、簡単と考えられるので×。よって、意味解釈ではないか。
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">理由Ⅲ</span></h5>
+    			<p>
+    			また、意味解釈は変数宣言漏れがないかチェックしたり、引数チェックをしたりして、ファイルの中を何度も行き来する可能性が在るので複雑なアルゴリズムになる可能性がある。これらの事象から、意味解釈のコードが一番行数を食っていると私は考える。
+    			</p>
+    		</div>
+    	</section>
+        
+    	<section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">GNU gcc</span></h5>
+    			<p>
+				バイトコードに直すまでにこれだけの行程を経ているなど考えたこともなかったので、実際にコンパイルするまたはインタプリタする過程（フェーズ）を知って、一つの言語を作る大変さ、恐ろしさを改めて感じました。そして、gccのソースコードの量だけ見ても、1ファイル5000行もあったりして、改めてプロジェクトの規模に圧倒され、また基礎プロでC言語を勉強したときの知識では、追いつかないもの（書き方の知らないもの）があって、C言語はまだまだマスターできないなと感じました。
+    			</p>
+				
+				<h5><span class="for_inline_of_h5">アップデート</span></h5>
+				<p>
+				開発ツール等のアップデートをいくつか怠っていたので、バージョンは常に気にするようにしようと思います。また最近、東京招致, iOS7, Mavericks, 景気回復など良い意味での変化が起こる年な気がするので、提出するWebページも近いうちに最新版にアップデートしたいと思います。
+
+				<h5><span class="for_inline_of_h5">Python</span></h5>
+それから、Pythonでのコーディングということで、夏休みにライブラリの関係上C++で作ることになったために、Pythonをあまり使っていなかったので、良い機会になりそうです。それから、Pythonに関する書籍が少ないのと相談する人がいなかったので、ちょうど良いコミュニティができてうれしいです。
+    			</p>
+    		</div>
+    	</section>
+		
+				
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../jasper">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

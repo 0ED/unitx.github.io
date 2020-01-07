@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、正規表現と自動人形。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜正規表現と自動人形</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>配布資料の問1・問2・問3に答えてください。上記の問において？？？の所を、正規表現の場合はテキストで、NFAおよびDFAの場合はastah* communityで状態線伊豆を描き、保存ファイルとキャプチャ画像の両方をレポートメールに添付してください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">問1</span></h5>
+    			<p>
+				　問1のオートマトンをNFAで表すと、以下のような状態遷移となる。
+	    			<a href="pack/images/pl1_NFA.png">
+	    				<img src="pack/thumbnails/pl1_NFA.png" alt="問1.NFA" />
+	    			</a>
+    			</p>
+    			
+    			<p>
+    			　次に、問1のオートマトンをDFAで表すと、以下のような状態遷移となる。
+	    			<a href="pack/images/pl1_DFA.png">
+	    				<img src="pack/thumbnails/pl1_DFA.png" alt="問1.DFA" />
+	    			</a>
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">問2</span></h5>
+    			<p>
+    			　問2のオートマトンを正規表現で表すと、「a(a|b)*ab」となる。そして、次にDFAで表すと、以下のような状態遷移となる。
+	    			<a href="pack/images/pl2_DFA.png">
+	    				<img src="pack/thumbnails/pl2_DFA.png" alt="問2.DFA" />
+	    			</a>
+    			</p>
+
+
+    			<h5><span class="for_inline_of_h5">問3</span></h5>
+    			<p>
+    			　問3のオートマトンを正規表現で表すと、「(a*|b*)cd」となる。そして、次にNFAで表すと、以下のような状態遷移となる。
+	    			<a href="pack/images/pl3_NFA.png">
+	    				<img src="pack/thumbnails/pl3_NFA.png" alt="問3.NFA" />
+	    			</a>
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>配布資料の問4において、当該のものが何であり、それを作ることが可能か否かを、上記の問1〜問3で行ったことと関連づけて記述してください。</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">問4</span></h5>
+				<p>
+				　BNFのBNFによって、1文字ずつ文字列か数字列かなどが判別され、正規表現化されたが、ここでは正規表現化された文字列に演算子、制御文、変数、数字などの目印をつけるものが今回のNFAやDFAだと私は考える。つまり実際に例えると、アルファベット文字列の後に数値なら変数、そのアルファベット文字列が制御文なら制御文となるように、制御文、変数という分岐に分かれて有限オートマトンの処理していく。これを作ることは可能だと思う。なぜなら、BNFのBNFで状態遷移を解析できたということは、この正規表現をオートマトンを使って解析するという工程も可能だと思うからである。
+				</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">問1〜問3に関して</span></h5>
+				<p>
+				　そこまで有限オートマトンを理解できていなかったのもあり、正しいオートマトンではないと思います。もう一度有限オートマトンをしっかり理解できるように、復習します。
+				</p>
+				<h5><span class="for_inline_of_h5">字句解析</span></h5>
+				<p>
+				　BNFのBNFであったり、今回の正規表現と自動人形を学んでいく中で、今まで作ってきたifやswitchなどで場合分けした字句解析のプログラムには、欠陥があると徐々に気づき始めてきて、作り直しだなと思いました。そして、公式（一次書物に近い）ではなく、誰かが書いた（二次書物以降）本で作るのは本当にダメだなと実感しました（もちろんすごく良い物もありますが）。もしそのまま字句解析を放置していれば、オートマトンが成り立つという証明がされずに世に出されることになるので、今回の僕の描いたオートマトンのように欠陥だらけになります。読んでいた本が正しくない方式だと気づけてよかったです。それから、字句解析プログラムを書いているときに何か汚い感じと抜けがある感じがしたので、解消しました。
+				</p>
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

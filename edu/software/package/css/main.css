@@ -1,0 +1,28 @@
+/* 
+===================================== 
+
+	main.css
+
+===================================== */
+
+
+
+
+/* メイン
+================================= */
+html {
+}
+html body {
+    background-color:white;
+    color: black;
+}
+
+
+/* コンテンツ
+================================= */
+#contents {
+    margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+    width: 690px;
+}

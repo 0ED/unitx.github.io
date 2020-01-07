@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、OOP。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜LP ハノイの塔</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>ハノイの塔のプログラムを論理プログラミングしなさい。（Prologで実装しなさい。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ソースコード</span></h5>
+				<pre class="brush: java; highlight: [9,10,11,12]">
+					?- remove.
+					hanoi(N):-
+					     	hanoi(N,left,right,center).
+					     	
+					hanoi(1,X,Y,Z):-
+						move(1,X,Y).
+						
+					hanoi(N,X,Y,Z):-
+						-(N,1,M),
+					     	hanoi(M,X,Z,Y),
+						move(N,X,Y),
+						hanoi(M,Z,Y,X).
+						
+					move(N,X,Y):-
+					     	write("move disc-"),
+					     	write(N),
+					     	write(" from "),
+					     	write(X),
+					     	write(" to "),
+					     	write(Y),
+					     	nl.
+					     	
+					?- clear, listing.
+					?- hanoi(3).</pre><br />
+				
+    			<h5><span class="for_inline_of_h5">実行結果</span></h5>
+				<pre class="brush: java;">
+					hanoi(N) :- 
+						hanoi(N,left,right,center).
+					hanoi(1,X,Y,Z) :- 
+						move(1,X,Y).
+					hanoi(N,X,Y,Z) :- 
+						-(N,1,M), 
+						hanoi(M,X,Z,Y), 
+						move(N,X,Y), 
+						hanoi(M,Z,Y,X).
+					move(N,X,Y) :- 
+						write("move disc-"), 
+						write(N), 
+						write(" from "), 
+						write(X), 
+						write(" to "), 
+						write(Y), 
+						nl.
+					yes
+					?- hanoi(3).
+					move disc-1 from left to right
+					move disc-2 from left to center
+					move disc-1 from right to center
+					move disc-3 from left to right
+					move disc-1 from center to left
+					move disc-2 from center to right
+					move disc-1 from left to right
+					yes</pre>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">非手続き型プログラミング</span></h5>
+				<p>
+				　非手続き型プログラミングをしてみて、手続きではないものというものかを知らなかったので、非手続き型でない意味が分かり、今までとは異なるプログラミング言語を学んだ感じがしました。
+				</p>
+
+    		    <h5><span class="for_inline_of_h5">クリティカルなソフトウェア〜論理プログラミング〜</span></h5>
+				<p>
+				　クリティカルなプログラムには論理的証明が必要であると言うことを改めて知りました。逆に、論理が成り立たないまたは論理的に考えずにプログラミングすると、いくらテスティングしてバグの発生確率を下げても、生命に関わる問題だったり、セキュリティホールが発生は起こりえる。だからこそ、プロダクトとして何か製品を出すときに、論理を怠ってはいけないと思いました。（プログラムの内容にも寄りますが。）
+				</p>
+				
+				<h5><span class="for_inline_of_h5">プログラミング言語</span></h5>
+				<p>
+				　少し前よりも、スケジュールが空きだしたのと、今日言語を作るのは3年目（僕の知識は少ないですが）でも出来ることだと知ったので、プログラミング言語「Pladin」の前準備として、ある程度設計した後に字句解析を進めようと思います。
+				</p>
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

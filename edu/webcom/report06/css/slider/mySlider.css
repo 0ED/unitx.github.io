@@ -1,0 +1,103 @@
+/*
+  Homepage slider
+*/
+/*
+.anythingSlider                         { width: 962px; height:480px; position: relative; margin: 0; padding:0; }
+.anythingSlider .wrapper                { width: 962px; overflow: hidden; height:480px; margin:0; position: absolute; top: 0; left: 0; }*/
+
+                                        /* Width below is max for Opera */
+/*.anythingSlider .wrapper ul             { width: 20000px; list-style: none; padding:0; margin:0; position: absolute; top: 0; left: 0; }
+.anythingSlider ul li                   { display: block; float: left; padding: 0; height:480px; width:962px; margin: 0; }*/
+
+.anythingSlider .arrow                  { visibility:hidden; }
+.anythingSlider .forward                { visibility:hidden; }
+.anythingSlider .back                   { visibility:hidden; }
+
+
+.thumbNav { 
+	height:69px; 
+	width:268px; 
+	padding:32px 0 0 750px; 
+	position:absolute;
+	top:379px;
+	background:url("../../images/nav-buttons.gif") no-repeat; 
+}
+
+.thumbNav li {
+}
+
+.thumbNav a { 
+	width:50px; 
+	height:50px; 
+	display: inline-block;
+	background:url("../../images/nav-buttons.gif") left no-repeat;
+}
+
+.thumbNav a:hover	{ background:url("../../images/nav-buttons.gif") center no-repeat; }
+.thumbNav a:active	{ background:url("../../images/nav-buttons.gif") left no-repeat; }
+.thumbNav a.cur		{ background:url("../../images/nav-buttons.gif") right no-repeat; }
+
+.start-stop          { visibility:hidden; }
+.start-stop.playing  { visibility:hidden; }
+.start-stop:hover    { visibility:hidden; }
+
+
+.anythingSlider ul
+{
+	position: static;
+	margin: 0;
+	background: none;
+	overflow: visible;
+	width: auto;
+	border: 0;
+}
+
+.anythingSlider ul li
+{ 
+	float: none;
+	height: auto;
+	width: auto;
+	background: none;
+}
+
+
+
+
+
+/*
+  Casestudy pages slider
+.slider-wrap {position:relative;}
+.csw {width: 631px; height:546px; overflow: hidden; position:relative;}
+.csw .loading {text-align:center; position:absolute; width:631px; height:546px; color:#fff; z-index:1000;}
+.stripViewer {position: relative; overflow: hidden; margin: auto; width: 631px; height:546px; clear: both;}
+.stripViewer .panelContainer {position:relative; width: 631px;}
+.stripViewer .panelContainer .panel {float:left; height:546px; position: relative; width:631px;}	
+.stripViewer .panelContainer .panel .wrapper {padding: 0;}		
+.stripNav {margin:0; position:absolute; z-index:100;}		
+.stripNavL {position:absolute; height:546px; width:316px; text-indent: -9000px; z-index:200; float:left; clear:both;}
+.stripNavR {position:absolute; height:546px; width:631px; text-indent: -9000px; z-index:100; float:right; clear:both;}
+.stripNavL a {display:block; width:316px; height:546px; background:url("../images/casestudy/arrow_left.png") left no-repeat;}
+.stripNavL a:hover { opacity:.80; -moz-opacity:.80; }
+.stripNavL a:active { opacity:.50; -moz-opacity:.50; }
+.stripNavR a {display:block; width:315px; height:546px; float:right; background: url("../images/casestudy/arrow_right.png") right no-repeat;}
+.stripNavR a:hover { opacity:.80; -moz-opacity:.80; }
+.stripNavR a:active { opacity:.50; -moz-opacity:.50; }
+*/
+
+
+
+
+/*
+  Team slider
+.teamSliderWrapp { width:748px; height:410px; float:left; clear:none;  position: relative;}
+.teamSlider { width:748px; height:410px; float:left; clear:both; }
+.teamSlider ul { width:748px; height:410px; }
+.teamSlider ul li { width:748px; height:410px; position:relative; }
+.teamSliderNav { width:96px; height:42px; position:absolute; z-index:100;   top: 340px;   left: 243px; display:inline-block; }
+.prev a { width:42px; height:42px; padding:0; margin:0 3px 0 3px; display:inline; clear:none; float:left; background:url("../images/about/nav.png") left no-repeat; font-size:11px; text-indent:-9999px; }
+.prev a:hover { opacity:.80; -moz-opacity:.80; progid:DXImageTransform.Microsoft.Alpha(Opacity=80); -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; }
+.prev a:active { opacity:.50; -moz-opacity:.50; progid:DXImageTransform.Microsoft.Alpha(Opacity=50); -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+.next a { width:42px; height:42px; padding:0; margin:0 3px 0 3px; display:inline; clear:none; float:left; background:url("../images/about/nav.png") right no-repeat; font-size:11px; text-indent:-9999px; }
+.next a:hover { opacity:.80; -moz-opacity:.80; progid:DXImageTransform.Microsoft.Alpha(Opacity=80); -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; }
+.next a:active { opacity:.50; -moz-opacity:.50; progid:DXImageTransform.Microsoft.Alpha(Opacity=50); -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+*/

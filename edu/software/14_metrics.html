@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱ|メトリクス</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの課題（メトリクス）。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="testing">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<h2>メトリクス</h2>
+    	<section>
+			<h4>Q1. なぜソフトウェア（製品）をメトリクス（測定）しなければなければならないのでしょうか。（もしもメトリクスを施していないソフトウェアが世の中に出回ったならば、一体どうなってしまうのでしょうか。）</h4>
+    		<div class="Block" id="Q1">
+    			<p>    			
+    			　例えば、他のモジュールとの結びつきが多いモジュールの場合、そのモジュールに変更を加えると、他のモジュールに大きく影響して、動作しなくなる可能性があります。このとき、変更を慎重に行うべきだとわかるはずです。そして、規模（コード行数など）が大きくなると、保守をする上で、おそらく経費を見積もることができるはずです。つまり、船や飛行機のように、一定の指標（操縦用のメーター）があることによって、最低限の予測、プログラムの特徴の把握をすることができるため、メトリクスしなければならないと私は考える。さらに、メトリクスはツールがあるだけで簡単に測定でき、今までの作ったプログラムと比較することができるので、過去のコードとの比較にも役立つはずである。
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>Q2. 京都産業大学コンピュータ理工学部に学んで、自分が作ったプログラムにメトリクスを施したことがありますか。（ある場合にはなぜ施したのですか、ない場合には、なぜ施さなかったのですか。</h4>
+    		<div class="Block" id="Q2">
+    			<p>
+    			　自分が作ったプログラムにメトリクスを施したことはありません。もちろん、メトリクスはソフトウェア工学Ⅰのときに習っているので、どんなものかは半年前に知りましたが、普段授業以外で作るのは大規模な物ではなく、Toy（ちょっとした）プログラムばかりだったということ、なぜ必要性なのかが知ってなかったこと、そして、重要だと言う認識がその時なかったこともあって使っていませんでした。あまり重要さを身を持って認識していないので、調べようと思います。
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+	        <h4>Q3. その他、感想など。</h4>
+	        <div class="Block" id="Q3">
+		        <p>
+		        　青木メトリクスの「アプリケーションとライブラリに分けられる指標」に関して、新たなプログラミング言語の開発に応用できるのではないかと思いました。例えば、樹状整列で使ったutilityパッケージやmvcパッケージのように、何度もよく使っている機能がもっとあるかもしれません。それを見つけるのに青木メトリクスを使って、ライブラリ部分にできる部分見つけ、新たなプログラミング言語の設計にそのライブラリを使えば、便利な言語ができるのではないかと思います（ただ、簡略化しすぎても良くない部分も在るかもしれませんが。）。
+また、秋学期のプログラミング言語で、独自の言語を少し作るというのを先輩方から聞いていたので、ちょうど良いのではないかと思っています。
+		        </p>
+				<p>
+				　次に、ちょうどこの前の授業辺りから、プロファイルやメトリクスに関して習ってきたので、最近プログラムの効率を感じた話をします。今まで、ライブラリをローカルで見れるようにしたり、サイトの中身を参考にしたりする目的で、サイトをゲットするということをたまにしていました。そのときに、SiteSuckerというアプリケーションを使って、サイトをゲットしていましたが、なかなか遅く、数分でファンが回って、CPUの温度が60度を超えるという状況でした。そこで、wgetコマンドがあったことを思い出したので、wgetコマンドをインストールして、wgetを使って同じサイトをダウンロードしたところ、すぐに処理が終わって、メモリの使い方やプログラムの効率によってこんなに大きく違うんだなあと感じました。つまり、メモリや規模も視野に入れて作らないと、こんなことが起きて、使ってもらえなくなる（アンインストールされる）ということを実感しました。
+		        </p>
+				<p>
+				　ここから若干雑談ですが、大学になってから、集中力がなくなってきたなあと思うことがよくありました。それで、昨日集中力がない理由を林修さん（今でしょの人）が「姿勢だ」と言っておられていて、まさに自分のことだと思いました。これから、姿勢正します。（宣言）
+				</p>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、二進木の平坦化。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜FP 二進木の平坦化</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>二進木を平坦化するプログラムを関数プログラムしなさい。（Lispで実装しなさい。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ソースコード</span></h5>
+				<pre class="brush: java; highlight: [2,3,4,5,6,7]">
+					(defun flatten (x) 
+					  (cond ((null x) nil)
+					        ((atom x) (list x))
+					        (t (append (flatten (car x))
+					           (flatten (cdr x)))
+							)
+					  )
+					)
+					(clear)
+					(flatten '(1 (2 (3 4) (5) (6 7) 8) 9))
+					(flatten '(a (b (c (d e))) f (g h) i))
+					(flatten '((1 . 2) ((3 4) . 5) 6))
+					(flatten '(((k (r s t u)) g (m)) c d ((n) (o (v w x y z) q))))</pre><br />
+				
+    			<h5><span class="for_inline_of_h5">実行結果</span></h5>
+				<pre class="brush: java;">
+					t
+					> (flatten '(1 (2 (3 4) (5) (6 7) 8) 9))
+					(1 2 3 4 5 6 7 8 9)
+					> (flatten '(a (b (c (d e))) f (g h) i))
+					(a b c d e f g h i)
+					> (flatten '((1 . 2) ((3 4) . 5) 6))
+					(1 2 3 4 5 6)
+					> (flatten '(((k (r s t u)) g (m)) c d ((n) (o (v w x y z) q))))
+					(k r s t u g m c d n o v w x y z q)</pre>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">Lisp 〜関数プログラミング〜</span></h5>
+				<p>
+				　関数プログラミングによって、並行または並列プログラミングによっておこるクリティカルセクションでの操作を防げて、束縛がないことで一時的に変数を格納することなく、コードが統一しやすい（たぶん）。という点で優れていると思います。ただ、数学的体系に関係しているというのが書かれていてもどういった点で数学的に優れているのかまだピンと来ないので、Lispをもうちょっとやろうと思います。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">Lispに関して 〜まつもとゆきひろ〜</span></h5>
+				<p>
+				今日京都コンピュータ学院50周年記念イベントでRubyの創設者「まつもとゆきひろ」さんの話を聞いてました。その中で、Lispというのは古いプログラミング言語と言われるけれども、数学的な考え方でプログラムされている以上、昔からの数学の積み重ねが言語に導入されているので、最先端のものだと考えた方が良いといっておられました。すなわち、言語の枠が狭いというのは時代に乗り遅れることだと思いました。もっと言語の概念、敬意を知って、時代に乗り遅れないように頑張ります。
+				</p>
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、LP リスト要素の回転。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜連想計算</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>連想表をリフレクションに作りながらフィボナッチ数を計算する場合とそうでない場合を比較し、アルゴリズムおよび計算量を明示する絵図を下記、JPERGまたはPNGに変換した上で、レポートメールに添付してください。</h4>
+    		<div class="Block">
+	            <h5><span class="for_inline_of_h5">連想表を使わず、フィボナッチ数を計算する場合</span></h5>
+	            <a href="pack/images/fibo_1.png">
+	            	<img src="pack/thumbnails/fibo_1.png" alt="フィボナッチ数列の最適解"/>
+	            </a>
+	            <p>
+	            　連想表を使わない場合、上図のようなノードに対してフィボナッチ数の計算を行う。また、上図では入力としてfibonaccis(5)を与えた時の例を示しており、深さ優先２分木探索（完全２分木ならO(2<sup>n</sup>)）をしている。この場合の計算量を考えると、決して正しいオーダーの計算手法ではないが、任意のあるノードは１つまたは２つの子ノードを持つため、1&lt;x&lt;2であり、nをルートの値（引数）としたとき、計算量はO(x<sup>n</sup>)（O(1<sup>n</sup>) &lt; O(x<sup>n</sup>) &lt; O(2<sup>n</sup>)）つまり、計算量yはy=x<sup>n</sup>乗に増えるため、指数関数上に計算量が増加すると予測できる。
+	            </p>
+    		
+    			<h5><span class="for_inline_of_h5">連想表をリフレクションに作りながらフィボナッチ数を計算する場合</span></h5>
+    			<a href="pack/images/fibo_2.png">
+	            	<img src="pack/thumbnails/fibo_2.png" alt="フィボナッチ数列の全探索の解"/>
+	            </a>
+	            <p>
+	            　連想表を使う場合、上図のようなノードに対してフィボナッチ数の計算を行う。そして、連想表をリフレクションに作りながら、処理を行うことによって、一度連想表に書き込まれた数値を持つノードの処理を飛ばすことができ、枝切りできる。このとき、上図の赤丸で囲ったノードだけを通り処理を行うので、計算量はO(2n-1)=O(n)となる。つまり、計算量yはy=nずつに増えため、直線関数上に計算量が増加すると予測できる。
+	            </p>
+	            	            
+	            <h5><span class="for_inline_of_h5">連想表を使う場合と使わない場合のフィボナッチ数を求める計算量</span></h5>
+
+	            <a href="pack/images/order.png">
+	            	<img src="pack/thumbnails/order.png" alt="フィボナッチ数列のオーダー"/>
+	            </a>
+	            <p>
+	            　上のグラフは、表計算ソフトNumbersを使って、連想表を使う場合と使わない場合のフィボナッチ数を求める処理の計算量を表計算した散布図である（使い慣れていないので汚いです）。x座標がルートの値（引数）、y座標が計算量、水色の点が連想表を使わない場合でy=2<sup>n</sup>とし、黄緑色の点が連想表を使う場合でy=nとなっている。今日の実習で引数が25だと、指数関数上に加速することが見受けられ、引数が50だと処理が計算に時間がかかりすぎて強制終了したので、このグラフはある程度正しいということがわかる。
+	            </p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">オーダー</span></h5>
+				<p>				
+				　プログラミングコンテストくらいしか実践してませんが、ある一定時間内に処理を終わらせる場合、オーダーを考えて、計算量を見積もる必要がありますが、今回のレポートをやって感じたのは、"視覚的に"オーダーを比較することによって、"どういう値のときにどの程度の計算量"というのが、わかりやすかったです。それのおかげで引数が50のときJunが止まった理由だったり、引数が25のとき指数関数上に加速したりという理由がわかったので、オーダーを考える上での視覚化の重要性に気づきました。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">動かないプログラム</span></h5>
+				<p>
+				　今使っているPCのスペックで動かないようなプログラムが未来では作られているというのが、今日の授業で響きました。ずっと今まで複数のコンピュータがないと動作しないだとか、今のコンピュータでは計算できないようなプログラムは僕自身は一切作っていません。でも、Googleなら世界中の莫大データを処理しようとしていますし、Appleなら今まで平面とストリートビューだけだった地図を3D化させようとしています。そう考えると、今までのスペックで動かないようなプログラムを作るのは、これからの未来にすごく必要とされているものだと思います。
+				
+				</p>
+				
+				<h5><span class="for_inline_of_h5">C++</span></h5>
+				<p>
+				　Paladinプロジェクトにおいて、オブジェクト指向の方が自分の中では理解しやすいと考えたのと、実行速度的にC++で記述しています。しかし、プログラミング言語は、いくつか見た中でもすべてにおいて、C言語で作られていました。そしてC++を補う形でC#が作られたということは、青木さんのいうようにC++には何か問題があるような気がしました。オブジェクト指向はC言語のstructで表せるので、それは違うとして、他に導入された部分でよろしくない部分があるのかもしれないので、もうちょっと調べようと思います。
+				</p>
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <head><title>ソフトウェア工学Ⅱのレポート</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keyboard" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱのレポート。" />
+        
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp" />
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-jp" />
+    
+    <!-- CSS -->
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link href="package/css/import.css" rel="stylesheet" type="text/css" />
+    
+    <!-- JS -->
+    <meta http-equiv="Content-Script-Type" content="text/javaScript">
+    <script src="package/js/tab.js"></script>
+        
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+    </head>
+    
+<body class="software" id="object">
+        <div id="contents">
+            <header>
+                <h1>ソフトウェア工学Ⅱ-オブジェクト指向</h1>
+            </header>
+        
+            <section class = "report">                
+                <ul>
+                    <li id="tab1" class="selected_tab" onClick="changeTab(1);">Q1</li>
+                    <li id="tab2" class="tab" onClick="changeTab(2);">Q2</li>
+                    <li id="tab3" class="tab" onClick="changeTab(3);">Q3</li>
+                </ul>
+        
+                
+                
+                <article id="article1" class="show">
+                    <h4>なぜオブジェクト指向が誕生したのでしょうか。そして、現在、プログラミングの原理原則として、オブジェクト指向プログラミングが支配的となっている理由を自分の考えとして記述してください。</h4>
+                    <p>
+                    オブジェクト指向が誕生したのはソフトウェアが複雑化または大規模化したときに、分割し小規模化して考えることが出来るようにするためであるのと、アラン・ケイが言うように、コンピュータを意識せず、日常生活に置き換えて考えられるようにするためであると私は考える。
+                    また、オブジェクト指向プログラミングが支配的になったのは、他言語に比べて「考えやすい」ためであると考えられる。
+                    なぜなら、まず手続き型では、何か動作をしてもらいたい（メッセージを送る）ときに、誰が誰（誰=モノ）に対して、その動作をするのかが明確ではない。しかし、オブジェクト指向では、誰が誰に対して、動作するのかが明示的にわかる。そのため、プログラマーに理解してもらいやすいオブジェクト指向が支配的になったと私は考える。
+                    </p>
+                <!-- /#article1 --></article>
+                
+                
+                <article id="article2" class="noshow">
+                    <h4>オブジェクト指向プログラミングを学ぶこととJavaを学ぶことの相異点を明確に記してください。</h4>
+                    <p>
+                    カプセル化や継承など基本的なオブジェクト指向の考えは同じものの、文法が異なっている。例えばメソッドを書くときに、Javaでは「修飾子 型名 method（param1,param2）」、JavaScriptでは「function method（param1,param2）」、Objective-Cでは「method:param1 method:param2」となっており、オブジェクト指向でも文法が異なる。
+                    そして、Javaではプログラマがメモリ管理をあまり気にしなくて良いが、他のオブジェクト指向ではメモリ管理を工夫しないといけない場合がある。
+                    また当たり前だが、用意されているライブラリが違う。そして、Javaでは他のオブジェクト指向と違い、実行環境（OS）に依存せず、動作ができる。
+                    </p>
+                <!-- /#article2 --></article>
+                
+                
+                <article id="article3" class="noshow">
+                    <h4>感想、何でも</h4>
+                    <p>
+                    アラン・ケイに関して今日詳しく知りましたが、アラン・ケイが1970年代に提唱したDynabookが数十年を経て、
+                    今の時代当たり前のように、使われているというのは感動的だと思います。また、Dynabookを提唱してから、十年くらいで家庭用コンピュータが使えるようになり、タブレット端末はジョブズ様が30年前に考えてから、数年前に実現されています。そう考えると、システムが考えられてから数十年で実現されていて、数十年後には、コンピュータが進化していると思います。そのコンピュータの進化に、関われるくらいのプログラマーになれるようにがんばります。
+                    
+                    オブジェクト指向の言語としては、JavaとJavaScriptしか扱えないので、もっと幅広く言語を学ぶようにしていきたいのと、複数言語を用いて、1つのプロジェクトまたはプロセスを作ったことがないので、やってみたいと思います。
+
+                    </p>
+                <!-- /#article3 --></article>
+                
+                
+            <!-- /.report --></section>
+            
+        <!-- /#contents --></div>
+</body>
+</html>

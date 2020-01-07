@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+    	<section>
+	        <h2>窓（ペイン）の事態</h2>
+	        <div id="classes">
+	        	<h4>Q1. 事態を表現したダイアグラム（状態遷移図やシーケンス図など）を「astah* community」を用いて書きなさい。</h4>
+	        	<div class="class" id="AllEmpty">
+	            	<h5><span class="for_inline_of_h5">クラス図（全体構造図）</span></h5>
+	                <a href="software/images/pane/AllEmpty.png">
+	                	<img src="software/images/pane_thumbnail/AllEmpty.png" alt="クラス関係を表した図"/>
+	                </a>
+	            <!-- /.class --></div>
+	        	
+				<div class="class" id="state">
+	            	<h5><span class="for_inline_of_h5">状態遷移図</span></h5>
+	                <a href="software/images/pane/base/state.png">
+	                	<img src="software/images/pane_thumbnail/base/state.png" alt="状態遷移図"/>
+	                </a>
+	            <!-- /.class --></div>
+	            
+	            <div class="class" id="sequence">
+	            	<h5><span class="for_inline_of_h5">シーケンス図</span></h5>
+	                <a href="software/images/pane/base/sequence.png">
+	                	<img src="software/images/pane_thumbnail//base/sequence.png" alt="シーケンス図"/>
+	                </a>
+	            <!-- /.class --></div>
+	        <!-- /.classes --></div>
+    	</section>
+        
+        <section>
+	        <h4>Q2. 事態の小テストで身に付いたことや感想などを1000字以上で。</h4>
+	        <div class="Block">
+		        <p>
+		        　シーケンス図に繰り返し（loop[1,6]）を表現する方法があり、それを始めて知ったので、良い教訓になりました。他にも条件分岐、条件判断、処理の中断など、シーケンス図に関しても知らない知識がまだあったので、もっと調べてみようと思います。また、起動も一応ユーザの動作かと思ったので、シーケンス図にプログラム起動後のクラス関係も書きました。そして、mvcパッケージのModel、View、Controllerは、paneパッケージのpaneModel、paneView、paneControllerが単に継承し、mvcパッケージのメソッドを間接的に使っているだけなので、paneパッケージの各クラスとExampleクラスだけのシーケンス図としました。
+		        そして状態遷移図に関しては、基本設計（外部設計）の段階であるので、どこまで書けば良いのかわかりませんでした。しかし、MVCプロジェクトの基本設計書にはユーザ動作だけ書かれていたため、ユーザ動作だけ書かさせていただきました。ただ、状態遷移図の状態を2状態しか作っておらず、これで良いのか結構不安です。そのため、ウィンドウが開いて、画像が読み込まれて、アイドル状態になるまでの過程の一つ一つを状態と考えるべきか、ユーザ動作の状態遷移だけか迷いました。それから、クラス図の全体構造図がMVCプロジェクトの基本設計書に書かれていたので、置かせていただきました。また、「外観図」ですが、AppleStoreで売られている無料のCADツール「123D Design」を使って書こうと思いましたが、説明書が英語で、使いこなすのに時間がかかると思ったので、今回はあきらめました。ただ、私の持っている他の画像生成ツールに比べると、無料の割にシンプルで、ダイナミックなグラフィックが出来そうなので、Strata製品（これは処理が重いので、まだ使えてません。近いうちにiMacを家族で買うのでそのときにStrataは使います）と併用して、今後使っていきたいと思います。<br />
+		        　Webサイトに関してですが、少しずつ改善していっております。最初に作ったサイトはバリデーション検査をしていませんでしたが、Coda2を取り入れてからは、バリデーション検査を常に行っています。また、Coda2を使ってから、バリデーション検査、サーバへの転送、サイト管理などがボタン1つで出き、開発者に感謝しています。 
+		        </p>
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

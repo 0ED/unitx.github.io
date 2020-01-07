@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱ｜Project √2 in 2014</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushPython.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<h2>Project √2 in 2014</h2>
+    	<section>
+			<h4>Q1. 作成したプログラムを一式と実行結果をアーカイブしてメールに添付してください。</h4>
+			<br />
+    		<div class="Block" id="Q1">
+    			<h5><span class="for_inline_of_h5">README for Python</span></h5>
+				<p>
+					　√2を小数点以下2万桁，「<font color="red" size="5px">ニュートン法</font>」と「<font color="red" size="5px">Pythonの内部処理</font>」で計算し，正答率を出力するプログラム．計算スピードは非常に遅いのでログを取り，計算を一度すれば，次からはログから結果を取り出す．もし，再計算したい場合はカレントディレクトリのログファイルを消去すれば，再計算できる．MacBookで試すなら実行時間が「ニュートン法」と「Pythonの内部処理」の両方を含めて，<font color="red" size="5px">約5分間</font> 計算時間がかかるので，プログラムを読んで適切にわけると良い．ちなみに二度目以降の計算時間は，ログから出力するだけなので，すぐに出力されます．
+					<table border="1" cellspacing="3" style="width: 450px; height: 120px;">
+	                    <tr>
+	                        <th><!-- 空白 --></th>
+	                        <th>ニュートン法</th>
+	                        <th>Pythonの2^0.5</th>
+	                    <!-- /行終わり --></tr>
+						<tr>
+	                        <th>real</th>
+	                        <td>0m3.990s</td>
+	                        <td>5m14.328s</td>
+	                    <!-- /行終わり --></tr>
+						<tr>
+	                        <th>user</th>
+	                        <td>0m3.969s</td>
+	                        <td>5m14.124s</td>
+	                    <!-- /行終わり --></tr>
+						<tr>
+	                        <th>sys</th>
+	                        <td>0m0.015s</td>
+	                        <td>0m0.158s</td>
+	                    <!-- /行終わり --></tr>
+					</table>
+					　この実験結果は，iMac(プロセッサ2.66GHz Intel Core i5, メモリ8GB)による結果であり，ニュートン法の方が明らかに早く見える．また，ニュートン法はwhileループのループ回数から，オーダーを知ることができる．計算した結果はニュートン法はO(19)だった．<br /><br />
+				</p>
+    		
+			  	<h5><span class="for_inline_of_h5">Source code used Nyuton in Python (<a href="software/codes/root2_nyuton.py">root2_nyuton.py</a>)</span></h5>
+	      		<pre class="brush: python;">
+				import decimal
+				decimal.getcontext().prec = 20001
+				x,e,two = decimal.Decimal(0.1), decimal.Decimal(+0), decimal.Decimal(2.0)
+				while True:
+					b = x - (x * x - two) / (two * x)
+					if b-e <= x and x <= b+e: break
+					else: x = b
+				print x
+	      		</pre><br /><br />
+
+			  	<h5><span class="for_inline_of_h5">Source code used Python Library in Python (<a href="software/codes/root2_pylib.py">root2_pylib.py</a>)</span></h5>
+	      		<pre class="brush: python;">
+				import decimal
+				decimal.getcontext().prec = 20001
+				decimal.Decimal(2) ** decimal.Decimal(0.5)
+	      		</pre><br /><br />
+
+
+    			<h5><span class="for_inline_of_h5">Check Result Source code in Python (<a href="software/codes/root2_pro.py">root2_pro.py</a>)</span></h5>
+	      		<pre class="brush: python;">
+				#! /usr/bin/env python
+				# -*- coding:utf-8 -*-
+				
+				import sys
+				import os 
+				from decimal import getcontext
+				from decimal import Decimal
+				
+				
+				def f(x): return x * x - Decimal(2.0)
+				def ff(x): return 2 * x
+				
+				def nyuton():
+					x = Decimal(0.1)
+					e = Decimal(+0)
+					count = 0
+					while True:
+						b = x - f(x)/ff(x)
+						if b-e <= x and x <= b+e:
+							print "ニュートン法: O(%s)" % count
+							return x
+						else:
+							x = b
+						count+=1
+				
+				def pysqrt():
+					return Decimal(2) ** Decimal(0.5)
+				
+				def logger(func,filename):
+					if filename in os.listdir("."):
+						with open(filename,'r') as a_file:
+							return a_file.read()
+					else:
+						ans = func()
+						with open(filename,'w') as a_file:
+							a_file.write(str(ans))
+						return ans
+				
+				def main():
+					getcontext().prec = 20001
+					ans1 = logger(pysqrt,"pysqrt.log")
+					ans2 = logger(nyuton,"nyuton.log")
+					count = 0
+					for l,r in zip(str(ans1),str(ans2)):
+						if l == r:
+							count+=1
+					print "一致した桁数: %s" % count
+					print "全体の桁数: %s" % len(str(ans1))
+					print "正解率: %s%%" % (count * 100 / float(len(str(ans1))))
+				
+				if __name__ == '__main__':
+					sys.exit(main())
+
+	      		</pre>
+	      		<br />
+	      		
+		  		<h5><span class="for_inline_of_h5">Result in Python (<a href="software/codes/nyuton.log">nyuton.log</a>, <a href="software/codes/pysqrt.log">pysqrt.log</a>)</span></h5>
+				<pre class="brush: python;">
+					一致した桁数: 20002
+					全体の桁数: 20002
+					正解率: 100.0%
+			  	</pre>
+			  	<br />
+			  	
+			  	
+	    	</div>
+    		
+    		
+
+    	</section>
+        
+        <section>
+	        <h4>Q2. この小テストで身に付いたことや感想などを1000字以上で。</h4>
+	        <div class="Block" id="Q2">
+		        <p>
+		        　ほげほげ
+		        </p>
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

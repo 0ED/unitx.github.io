@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+        <h2>ひとりじゃないって</h2>
+        <section>
+        	<h4>Q1. 分散コンパイルおよびバージョン管理に関して、1番効用は何だと思いますか。素人と玄人の差は何でしょうか。</h4>
+        	<div class="Block">
+	        	<p>
+				　分割コンパイルの1番の効用は、人間の頭で覚えきれないようなコードを小分けにして読みやすくでき、コードを読む情報量が減らすことができることだと思う。次に、バージョン管理に関する1番の効用に関しては、複数人でコーディングするときに負担が減り、さらに自分がコーディングするのに自信がない部分を他人が補って、後から自分も理解することが出来るという点だと思う。
+素人と玄人の違いに関しては「他人」又は「未来の自分」のことを考えて、コーディングする否かだと思う。私のように素人の場合は、その場しのぎでコーディングしていくため、後からの修復が何度も加わる。それに対して、玄人はしっかりした順序を組み立てて、その順序通りコーディングするため、それが効率の良さや見やすさにつながって、「他人」又は「未来の自分」に対する可読性が上がると思う。<br /><br />
+	        	</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <section>
+	        <h4>Q2. 講義のタイトルが、なぜ「ひとりじゃないって」なのでしょうか。どんな真意を伝えようとしているのでしょうか。</h4>
+	        <div class="Block">
+		        <p>
+				　良いシステムを作るためには複雑で細かな設計が必要であり、そのような設計のためには各人員同士で連携して分担したり、切磋琢磨していくことが大切ということを伝えようとしているのだと思う。
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+		<section>
+	        <h4>Q3. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+				　バージョン管理は、ソフトウェア工学Ⅰで学びましたが実際にデモを見てみて、複数プログラミングで実践してみたいと思いました。それから、今までは基礎を学ぶために1人だけでプログラミングしてきましたが、この方法を用いて、これから複数人へステップアップしていけるなあと感じました。
+				</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

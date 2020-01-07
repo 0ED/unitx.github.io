@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<section>
+	        <h2>レストランの機能</h2>
+	        <div id="classes">
+	        	<h4>Q1. レストランのデータフロー図を仕上げてください。データフローからプロセスを導きだす訓練です。</h4>
+	        	<div class="class" id="AllEmpty">
+	            	<h5><span class="for_inline_of_h5">レストランのデータフロー図</span></h5>
+	                <a href="software/images/restaurant/dataFlow.jpg">
+	                	<img src="software/images/restaurant/dataFlow.jpg" alt="レストランのデータフロー図"/>
+	                </a>
+	            <!-- /.class --></div>
+	        <!-- /.classes --></div>
+    	</section>
+        
+        <section>
+	        <h4>Q2. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+		        　レストランのデータフロー図ですが、僕のバイト先がアナログ注文なので、メモ帳を書いてから、オーダー機器に打ち込んで、注文するというデータフロー図にしました。そして、このオーダー機器がなかなかの神オブジェクトで、支配人もホールも調理場（たまに）も会計も見るため、Mediatorみたいな役割を担っています。ちなみに、このオーダー機器にはバグがあります。しかし、全国すべての「梅の花」の店舗のシステムを更新しないと行けなくなるので、結局、支配人や相談役担当の人に言いませんでした。おそらく、昔よりかバグを見つける感性が身に付いたのかなあと思います。また、今回は僕のバイト先「梅の花」の注文方式を採用したため、ホールと会計と調理場がすべて別々の人という設定としています。極たまに、会計がホールをする例外が発生しますが、今回はその例外はなしとしています。それから、図の見栄えに関してですが、完成したのが結構ぎりぎりなのもあって、見栄えが悪いです。<br />
+		        　ここから本題ですが、作ってみて思ったのは、データフロー図は順番をあまり気にせず作るので、時間軸に関して言うと状態遷移に似ているなあと思いました。また、状態遷移図は1つのオブジェクトの一生を追う感じですが、データフロー図では、1つのモノがある条件に達することによって、別のモノが動作すると言う感じがしました。（日本語変ですが、、）
+		        
+		        
+		        
+		        
+		        
+		        
+		        </p>
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

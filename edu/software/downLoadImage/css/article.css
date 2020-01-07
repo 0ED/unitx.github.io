@@ -1,0 +1,79 @@
+/* 
+===================================== 
+
+	article.css
+
+===================================== */
+
+
+/* アーティクル
+================================= */
+article {
+    margin-top: 45px;
+    margin-bottom: 200px;
+}
+
+article h2 {
+    font-size: 2.4em;
+    color:gray;
+}
+
+article h4 {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    color: black;
+    color: #E18728;
+    border-bottom: 3px solid #A7F1FF;
+    border-left: 12px solid #A7F1FF;
+}
+
+article h5#tableName {
+    text-align:center;
+    font-size:0.9em;
+    color: #000;
+}
+
+article p {
+    font-size:1.0em;
+}
+
+article div#image {
+    text-align:center;
+
+}
+
+article img {
+}
+
+
+article table, th, td {
+    border:none;
+}
+
+article table {
+    width: 680px;
+    margin-bottom: 15px;
+}
+
+article table tr {
+    font-size:14px;
+}
+
+
+article table tr th {
+    background-color: #A7F1FF;
+}
+
+/* 一列目 */
+article table tr th:first-child {
+    width: 110px;
+}
+
+article table tr td {
+}
+
+article table tr td pre {
+}

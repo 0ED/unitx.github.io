@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、OOP。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜OOP</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>小テスト（1）でオブジェクト指向プログラミングの実際をJavaとPythonで行います。もっとも自分の勉強になるであろうと思う事柄をあげてください。（その理由も明記してください。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">新しい言語に対する適応力</span></h5>
+				<p>
+				Pythonを使って、複数人でプログラムを書くのは初めてなので、その点学べる物が多くあると思います。そして、HTMLファイルを解析するのに関しては、Python, PHP, JavaScriptなどで少しは作ったことがありますが、Javaでの実装は初めてです。つまり、一方はやったことがあっても、もう一方はやったことがありません。なので、各言語での実装の違いを勉強できると思います。この繰り返しによって、どんどん言語の体系みたいなものがわかっていって、今日おっしゃっていた新しい言語が出てきても、それに対応できる能力が身に付けば良いなあと思います。
+				</p>
+				
+    			<p>
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>なぜ手続きプログラミングはオブジェクト指向プログラミングへと発展したのでしょうか。（時代が要請したと言われますが、その要請とは何でしょうか。）</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">イントロダクション</span></h5>
+    			<p>
+    			　2つの視点から、手続きプログラミングからオブジェクト指向プログラミングへの発展を考えたいと思います。1つ目の「大規模なソフトウェア」は"http://www.infotech-s.co.jp/"（<a href='http://www.infotech-s.co.jp/syuppan/pdf/03.pdf'>コンピュータの歴史</a>）とWikipediaを自分なりにまとめたもので、2つ目の「命名」では完全に自分の考えのみです。
+    			</p>
+    			
+    		    <h5><span class="for_inline_of_h5">大規模なソフトウェア</span></h5>
+				<p>
+				　歴史的に主にSimulaなどの思想を基にSmalltalkが1972年世に公開され、オブジェクト指向という概念が広まった。その時代に関して調べてみると、AppleⅠ（1976年）のような家庭用コンピュータはない物の、大規模集積回路が使用され、スーパーコンピュータが作られ、プログラムとしての規模が大規模になって、プログラムコードが複雑化し、ソフトウェアを体系化する動きが起こり、オブジェクト指向プログラミングへと発展したのではないかと思う。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">命名 〜命を吹き込む〜</span></h5>
+				<p>
+				　プログラムを作るときにプログラムコード（プログラムファイル）には、名前を必ずつける。これはおそらく、手続き型だけしか存在しない昔も、オブジェクト指向がある今も変わらないことだろう。もしあるロボットを作って、そのプログラムコードを書いたとき、ロボットの名前も、プログラムコードの名前も、プロジェクトの名前も同一のものを使うはずだ。そしてメソッドは、ソースコードを見たときに処理内容をわかりやすくするため、いつか分ける。そうすると、似たようなロボットを作ったとき、だいたい同じようなメソッドのパターンができる。例えば「足を動かす。」、「手を動かす。」、「会話する。」など。あるとき、アランケイのようにいくつかの経験を重ねた人があることに気づく。「プログラムコードは生き物のように名前があり、いくつかの動作をする。」このような感じで、自然と出来たのではないかとも私は思う。
+				</p>
+    		</div>
+    	</section>
+        
+        
+    	<section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">エデックス</span></h5>
+				<p>
+				　コンピュータサイエンスの最高峰であるMITとハーバードによって創立された非営利プロジェクト「edX」を知ってまず、すごいプロジェクト、コミュティだと思いました。色々調べていると、コンピュータプログラミングだけではなくて、様々な分野のサイエンスを扱っていて、これはやるしかないだろうと思いました。ただ、英語のリスニングには自信がないので、前からやっているEnglish Centralと並行して、少しずつ受講して行きたいと思います。それから、最近思ったのが海外のニュースを届けてくれるバイリンガルニュースで、日本では全く聞いたこともないコンピュータサイエンスのプロジェクトの話が流れていたりして、自分自身遅れているなあと思うことがあります。なので、余計「edX」のようなシステムを活用するべきだなあと思いました。
+				</p>
+
+    		    <h5><span class="for_inline_of_h5">総理大臣課題 〜構想を練る〜</span></h5>
+				<p>
+				　今回の総理大臣の課題に関して、ソフトウェア工学Ⅱでの樹状整列プロジェクトはしっかりとした土台が出来た状態で、コーディングに入ってはいなかったので、今回は万全な土台を作り上げてから、しっかりとコーディングを進めたいと思います。また、まだ話し合っていないことですが、若干人数がプロジェクトメンバー（たぶん6人くらい）が増してきたので、分けても良いかなとか若干僕（僕だけ）は考えています。なぜなら、グループを分けたとしても、相談して成果物を2つに分けた方が個人個人の利益にもつながると思うので。ちなみに、プロジェクト開始は次の木曜日からということになっています。
+				</p>
+
+    			<h5><span class="for_inline_of_h5">コードリーディング</span></h5>
+    			<p>
+    			　ソフトウェア工学Ⅱのときもそうですが、ソースコードが公開されているので今回もこのPythonプログラムの書き方を見つつ、Pythonのドキュメントの書き方も参考にして、コードリーディングしつつ、プログラムを書こうと思います。少し読んだ限りでは、やはりPythonドキュメントでもそうだったように、edXや青木さんのコードでも、Pythonを書くときスネークケースを使っていたり、参考になる部分が他にもあるので、盗んでいこうと思います。<br />
+    			Good artists copy, great artists steal.  -Picasso
+    			</p>
+    			
+    		</div>
+    	</section>
+    	
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <head><title>DarwinSlot</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keyboard" content="Tasker☆net｜スロットマシーン" />
+    <meta name = "description" content="スロットマシーンの実装" />
+        
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp" />
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-jp" />
+    
+    <!-- CSS -->
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link href="report04/css/import.css" rel="stylesheet" type="text/css" />
+    
+    <!-- JS -->
+    <meta http-equiv="Content-Script-Type" content="text/javaScript">
+    <script src="report04/js/report04.js"></script>
+    </head>
+    
+<body class="webcom" id="report04">
+    <div id="document">
+        
+        <!-- 真ん中に表示されているやつ -->
+        <div id="contents">
+                <div id="slotField">
+                    <div id="markField">
+                        
+                            <div class="mark">
+                                <img id="markImage0" src="report04/images/markAll.png" />
+                            <!-- /.mark --></div>
+                    
+                            <div class="mark">
+                                <img id="markImage1" src="report04/images/markAll.png" />
+                            <!-- /.mark --></div>
+                    
+                            <div class="mark">
+                                <img id="markImage2" src="report04/images/markAll.png" />
+                            <!-- /.mark --></div>
+                        
+                    <!-- /#markField --></div>
+                <!-- /#slotField --></div>
+            
+            
+            
+                <div id="buttonField">
+                    <input type="button" class="stopButton" id="stopButton0" value="STOP" onclick = "stopSlotMark(0)"/>
+                    <input type="button" class="stopButton" id="stopButton1" value="STOP" onclick = "stopSlotMark(1)"/>
+                    <input type="button" class="stopButton" id="stopButton2" value="STOP" onclick = "stopSlotMark(2)"/>
+                    <input type="button" class="startButton" id="startButton" value="START" />
+                <!-- /#buttonField --></div>
+        <!-- /#contents --></div>
+        
+        
+    <!-- /#document --></div>
+</body>
+</html>

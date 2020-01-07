@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title> 
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、総理大臣の小テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜総理大臣の小テスト</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>作成したプログラムに関することを記してください。</h4>
+    		<div class="Block">
+				<h5><span class="for_inline_of_h5">完成したプログラム</span></h5>
+				<p>
+				完成したプロジェクトのリンクを以下の画像リンクに記載しています。
+				</p>
+    			<div align="center">
+	    			<a href="http://www.cse.kyoto-su.ac.jp/~g1144155/SouriDaijin/index.html">
+		    			<img src="pack/thumbnails/primeministers.png" width="150" height="150" alt="総理大臣プロジェクト" />
+		    			<div style="font-size: 1.1em; margin-top: 0px;">PrimeMinisters</div>
+	    			</a>
+    			</div><br />
+
+    		    <h5><span class="for_inline_of_h5">樹上整列プロジェクトと比較して</span></h5>
+    		    <p>
+    		    　樹上整列プロジェクトと比較すると、外部設計書の一部と内部設計書が提供されており、前回のようにクラス図で必死になるということがなかった反面、さぼりがちになってしまいました。原因は、１週間の間に月曜日と木曜日だけしかプロジェクトをしなかったことであり、特に月曜日は２人だけだったので全く進みませんでした。前回なら月曜と木曜日に方針の決定し、それ以外の日に各個人が分担して取り組むでスムースにいっていたので、プロジェクトの進め方に特に問題があったと思います。
+    		    </p>
+    		    
+				<h5><span class="for_inline_of_h5">デスマーチ</span></h5>
+    		    <p>
+    		    　それから、私自身は外部設計書は頭に入れつつ考えていましたが、そうでないものとのデスマーチがあったと思います。それは、ダウンローダーを作る側が ~/Desktop/SouriDaijin/のディレクトリ内の構造を把握していないので、ダウンロードをするときに、変な場所を参照していたということ、そして、そのままReaderをやるものが、その変な場所から読み込もうと思っていたので、それを直す手間が必要でした。また、ガントチャートもメンバのほとんどが意識して見ていなかったので、意識にも差があったかもしれません。人数が多くてかつ設計書を読んでないことで、意思伝達がうまくいっていなく、プロジェクトでの意思伝達は前回より、失敗だな思います。
+    		    </p>
+    		</div>
+    	</section>
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">    		        		       		    
+    		    <h5><span class="for_inline_of_h5">統合</span></h5>
+				<p>
+				　移植テストしたときに気づきましたが、Linux上でシステム操作をおこなったときに、ディレクトリパスが違ったり、という状況がありましたが、他の班から方式を聞くまで、方法をどうするかわかりませんでした。なので、プロジェクトが終了した後に、他の班の方式を試してみようと思います。それから、Pydocに関しても、manを読むだけでは解決できない問題があったので、それも他の班がどうしていたのか調査しようと思います。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">Java & Python</span></h5>
+    		    <p>
+    		    　次に、JavaとPythonでのコーディングに関してですが、Javaでのコーディングの方が割合が多かったのでそこまでPythonでのコーディングはしておりませんが、Javaと比べ、Pythonでのコーディングは標準ライブラリ的に優れたものばかりで、実際のコード行数も全体的に少なくコーディングできたと思います。それから、Pythonでは、VimとXcodeでのインデントの違いやGNUスタイルの統一などの形式的問題が起こらず済んだのもすごく良い点でした。それから、CSVの扱いであったり、リストの扱い、ファイル操作が格段に用意に操作でき、Javaと比べ、コーディングスピードが早かったと思います。
+    		    </p>
+			</div>
+	    </section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、LP リスト要素の回転。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜LP リスト要素の回転</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>リスト要素の回転をするプログラムを関数プログラミングしなさい。（Lispで実装しなさい。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ソースコード</span></h5>
+				<pre class="brush: java; highlight: [2,3,4,5,6]">
+					(defun rotate (x n)
+						(cond 
+							((= n 0) x)
+							((> n 0) (rotate (append (cdr x) (cons (car x) nil)) (- n 1)))
+							((< n 0) (rotate x (+ (length x) n)))
+						)
+					)
+					(clear)
+					(rotate '(1 2 3 4 5 6 7 8 9) 2)
+					(rotate '(1 2 3 4 5 6 7 8 9) -3)
+					(rotate '(1 2 3 4 5 6 7 8 9) 9)
+					(rotate '(1 2 3 4 5 6 7 8 9) -18)</pre><br />
+				
+    			<h5><span class="for_inline_of_h5">実行結果</span></h5>
+				<pre class="brush: java;">
+					t
+					> (rotate '(1 2 3 4 5 6 7 8 9) 2)
+					(3 4 5 6 7 8 9 1 2)
+					> (rotate '(1 2 3 4 5 6 7 8 9) -3)
+					(7 8 9 1 2 3 4 5 6)
+					> (rotate '(1 2 3 4 5 6 7 8 9) 9)
+					(1 2 3 4 5 6 7 8 9)
+					> (rotate '(1 2 3 4 5 6 7 8 9) -18)
+					(1 2 3 4 5 6 7 8 9)
+				</pre>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">関数型プログラミング言語Lisp</span></h5>
+				<p>
+				　関数型プログラミング言語Lispに関して、今までの言語では、代入したり、ループしたりする文の書き方に差がありましたが、Prologと同様にLispでも、car, cdrのたった二つの文法だけで、すべての文が構成されていて、他言語のように文法規則が乱雑することなく、規則が凝縮された感じがして、Lispの開発者ジョン・マッカーシーさんの発想（Prolog）がすごいと思いました。
+				　そして、Lispはプログラムを作る上で覚える部分の少ない言語だとも改めて思いました。今まで使っていたような言語（論理型でも、関数型でもない言語）では、引数の数が多かったり、ストリングのときは%dを使ったり、様々な文法がありましたが、この2つに抑え、シンプルな構造をしている。そんな風に感じました。
+				</p>
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

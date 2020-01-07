@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱ｜樹状整列</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<h2>樹状整列の小テスト</h2>
+    	<section>
+			<h4>Q1. 成果物一式の在り処（ホームページとしてのURL）を記してください。</h4>
+    		<div class="Block" id="Q1">
+    			<p>成果物は、下記のリンクに掲示されています。
+    			</p>
+    			<div align="center">
+	    			<a href="http://www.cse.kyoto-su.ac.jp/~g1144155/Project_Forest_Problem/index.html">
+		    			<img src="software/images/forest.png" width="150" height="150" alt="フォレストプロジェクト" />
+		    			<div style="font-size: 1.1em; margin-top: 0px;">Forest_Project</div>
+	    			</a>
+    			</div>
+    		</div>
+    	</section>
+        
+        <section>
+	        <h4>Q2. この小テストで身に付いたことや感想などを1000字以上で。</h4>
+	        <div class="Block" id="Q2">
+	        	<h5><span class="for_inline_of_h5">デスマーチ</span></h5>
+		        <p>
+		        　基本設計から詳細設計、詳細設計からコーディングかけて、ウォーターフォール・モデルでプロジェクトを進めれていないと思います。今回の樹上整列では詳細設計がしっかりしていない（1人が詳細設計を考えた）ということもあって、デスマーチを歩みました。メンバーはそんなにデスマーチでなかったといいますが、私は間違いなく、デスマーチになったと思います。また、荻原先生のプロジェクト演習の方では詳細設計をしっかり固めたおかげでコーディングがかなりスムーズということがあったので、なおさら詳細設計をしっかりすべきだったと後悔しています。ただ、最初（コーディングの途中から滝登りするまで）はウォーターフォール・モデルで奇麗に進めていたので、各工程でメンバーが集まれないことがあったり、各クラスの本来の役割を見失った（これは良くありました）ときに、前の行程を振り返ることで方針を最初は統一することが出来ました。特に僕なんかは色々なことがあって、参加しづらい時期もあったので、どの程度プロジェクトが進んだのかをURL一本で確認できたというのは良かったです。
+		        </p>
+		        
+		        <h5><span class="for_inline_of_h5">「教育」の「教」教えてもらう。</span></h5>
+		        <p>
+		        　プロジェクトを進めるにあたって、色々な方々（青木さん、玉田さん、大本さん、寺子屋ブラザーズ（特に森さん））に聞きに行ったのは本当に良かったです。設計が出来ただけでなく、設計に関する技法を玉田さんに教えていただいて、樹上整列はもちろん、paneの小テストでも生かすことができました。そして青木さんに直接、基本設計の報告にいったときに、基本設計を直すことができたおかげで、あとあとの悪循環を防げたので良かったです。特にブランチに関しては、当初ないクラスだったので、取り入れたことによって、階層の異なるブランチを結ぶことを可能にしました。また、なぞのクラスキャストエラーに関しては、寺子屋でずっと悩んでいたら、まさかの大本さんが見てくださって、一発解決してかつ、原因を知ることが出来ました。それから、森さんにはかなりお世話になったので、やはり能力のある人たちに聞きに行くのは、大事だと思いました。
+		        </p>
+		        
+		        <h5><span class="for_inline_of_h5">「教育」の「育」育つ。</span></h5>
+				<p>
+				　今回のプロジェクトで成長できたと思います。何よりも、MVC, Pane, Utility, Scope, Project/Project_MVC_Exampleは、大分参考にして、作りました。そして、特にForestModel, ForestView, ForestControllerのスーパークラスであるMVCのクラスはフル活用しました。そのおかげで、ダブルバッファ、マウスリスナーの追加、MVCの構築などを大分楽に実現でき、良い教訓を得ました。さらに、コードリーディングを何度も繰り返して行くうちに、どのようにコーディングすれば良いかが、少しずつわかってきたので、「育つ」ことが出来たと思います。
+				</p>
+		        
+		        <h5><span class="for_inline_of_h5">M&A.</span></h5>
+		        <p>
+		        　今回チーム合併しましたが、「良かった」が7割、「そうでもない」が3割だと私は思います。時期的にもう少し早く合併していれば、良い感じにはなっていたかもしれませんが、最後の方だったのと実質加わったメンバーは1人で、結局コードも後から改変したのもあったので、微妙です。ただ、おかしな挙動が起こったときや、コードがおかしい場合に話し合えるメンバーが増えたことは良かったと思います。
+		        </p>
+		        
+		        <h5><span class="for_inline_of_h5">どうすれば良くなったか。</span></h5>
+				<p>
+				　詳細設計をもっと固めるべきだった。それが、大きいと思います。詳細設計のときにメンバー全員で話し合い、それだけでコーディングが出来るようにするべきで、コーディングに力を入れるというスタイルで複数プログラミングすると、そのメンバーの能力（コードリーディングしていない）だったり、書き方の違いのせいで、何度も書き直してしまうという超効率の悪いプログラミングになってしまい、結果としてコーディングが遅くなってしまったので、もっと詳細設計をしっかり固めてからか、固めながらコーディングをし、メンバー全員にコードリーディングをしっかりさせないといけないと思いました。
+				</p>
+
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

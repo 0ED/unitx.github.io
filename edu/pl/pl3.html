@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、整理整頓。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜整理整頓</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>自動的なメモリ管理および要・不要を見分けるガベージコレクション（廃品回収）に関する講義を受講して、何が一番ためになりましたか。（自分が今まで知らなかった（実践してこなかった）メカニズムがありましたか。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ジェネレーションスキャンベンジング</span></h5>
+				<p>
+				　メカニズム自体は今まで知らない物ばかりでしたが、ジェネレーションスキャンベンジングは、ガベージコレクションの中で一番ためになりました。実生活でも使えるメカニズムですが、次の章に書いてしまったので、実生活ではなく、プログラムの中の自動的なメモリ管理という視点で見ると、最終課題に作るであろう独自言語には必ず必要になるものだと思います。しかし、青木塾でも言っておられたガベージコレクションに関する昔の話を聞いていると、限られた時間で自動的なメモリ管理に手が回らないと思うので、頃合いになった時に、自動的なメモリ管理を独自言語に入れたいと思います。ちなみに、この独自言語の構想は「その他、感想」に書いています。
+				</p>
+				
+    			<p>
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>もしもですよ、自分の実生活で採用してみたい整理整頓のメカニズムはどれになりますか。（その理由も記してください。）</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">イントロダクション</span></h5>
+				<p>
+				　実生活において、暮らす人数または、暮らす家族の性格によって、メカニズムを使えるか否かは異なってきます。おそらく数人だと、なんとか話し合いをすれば、いずれかのメカニズムを使えるでしょう。しかし、研究室のように多種多様の人種を相手にする場合（複数人で暮らす場合）、整理整頓のメカニズムはおそらく使えません。ということで、複数人（多種多様の人）で暮らす実生活の場合を除いて、考えたいと思います。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">ジェネレーションスキャンベンジング at 実生活</span></h5>
+				<p>
+				　最初に、リファレンスカウンティングは実生活では使えないように思います。なぜなら、物と物の関連度合いを計らなくては、ならないからです。つまり、リファレンスカウンティングよりマーク&スイーピングの方が「実生活において」は良いと私は思います。次に、マーキング&スイーピングは自動メモリ管理においては、プログラムが一時停止しないと行けないので、よろしくない管理方法ですが、実生活では極一般に行われていると思います。私もこの方法で、部屋もPCも管理してきました。しかし、全部を管理するのは難しいという欠点があり、「少しずつ片付けていく」という方法しかありません。ジェネレーションスキャンベンジングでは、この問題をある程度解決できると思います。例えば、PCでの管理で例えると、MacOSXでいうホームディレクトリの中のファルダ群を探索して行き、1年以上開いていないファイルを見つけ出し列挙すれば、効率良く整理整頓を行うことができます。さらに、思い出のファイルなどは探索しないようにすれば、もっと効率よくなるはずです。そして、部屋を片付けるときも重要度ごとに分類しておけば、後から整頓するときに、重要度の低い物だけをすぐに見つけれます。つまり、ジェネレーションスキャンベンジングを実生活で採用してみたいと思います。じゃあ、いつ使うか。いまでしょ！ということで、物事は最初に苦労すると、後から楽できる場合が多いので、今から取り入れて行きます。</p>
+    		</div>
+    	</section>
+        
+        
+    	<section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">メモリ管理</span></h5>
+				<p>
+				　1年の頃には、メモリ管理を何も考えておらず、メモリ解法と言われても、1年の頃にメモリを意識したことはなかったので、freeがどういうものかのもわかっていませんでした。今になって（ACMプログラミングコンテストや青木塾を経て）、徐々に意識し始めました。そして今日、ガベージコレクションを習い、また一歩踏み出せたように思うので、これからもメモリを意識していこうと思います。
+				</p>
+
+    			<h5><span class="for_inline_of_h5">プログラミング言語「Paladin」</span></h5>
+    			<p>
+    			　言語を変換するTranslator（翻訳機）の話を聞いて、帰りにコンパイラの作り方に関する本を探して読んでみました。そのときに、言語から他言語への翻訳はやはり無理があると気づいたので、手始めに言語を作れば良いと考えました。そして、去年のプログラミング言語の最終課題に、言語を作る課題があるとも聞いていたので、早くから作ろうと思います。言語の名前は「Pladin」です。インタプリタ、コンパイラの両方で実行できる言語とし、「pala main.pl」または、「palac main.pl; pala main.plo」で実行という構想だけ考えました。まず中身ではなく、形から入ってしまう性格なので、ロゴも考えてしまいました。
+    			</p>
+    			
+    			<h5><span class="for_inline_of_h5">先送りは、やはり良くない</span></h5>
+    			<p>
+				　2日も提出が遅れてすみません。色々あったのですが、結局は先送りです。その結果、レポートの効率が確実に悪くなったと思います。次回からは、先送りしないようにします。
+				</p>
+    		</div>
+    	</section>
+    	
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

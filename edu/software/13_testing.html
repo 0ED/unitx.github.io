@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱ|テスティング</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの課題（テスティング）。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="testing">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<h2>テスティング</h2>
+    	<section>
+			<h4>Q1. まずテストとデバッグの相違を記し、テストとデバッグを行う人が、同じであっていいのかについて述べてください。</h4>
+    		<div class="Block" id="Q1">
+    			<p>
+    			　テストは、仕様書通りに動作しないバグを発見することであり、デバッグは、バグを消すためのプログラムの修正のことを示す。つまり、テストによって発見されたバグを、デバッグで直すという関係を持っていると考える。
+    			</p>
+    			<p>　
+    			テスタとデバッガを行う人が同じの方が作業は捗るが、別々の方が良いと思う。なぜなら、運用テストに関していうと、プログラマ（開発者）が操作してミスをしなくても、ユーザ（機会に不慣れな方）が操作した場合ミスする可能性があり、もしテストとデバッグを行う人が同じであれば、その操作ミスを予測できないからだ。
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>Q2. 自分が作ったプログラムに対して、どんなテスティングを施していましたか。（限界値分析や回帰テストなどを行う際に、xUnit（JUnitやCUnitやSUnit）などを用いたことがありますか。）</h4>
+    		<div class="Block" id="Q2">
+    			<p>
+    			　テストとしては統合テスト、結合テスト、移植テスト、単体テストのようなことをしました。移植テストはJavaのプログラムが他のOS（Linux、Windows、OSX）上で動いているのかをユーザ視点で検証しただけで、統合テスト、結合テストは各プログラマがコーディングしたモジュールを組み合わせて動作したときに、正常かどうかを確かめるかだけで、正式な方法ではないと思います。そして、単体テストはコーディングと同時並行で進め、ドライバ（新たなファイル）を作って、各メソッドの返り値が正常であるかを確認しているだけで、xUnitを使っていませんでしたので、ものすごく効率の悪いことをしていたと思います。
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+	        <h4>Q3. その他、感想など。</h4>
+	        <div class="Block" id="Q3">
+		        <p>
+				　今日プロファイルに関して、触れられましたが、一部のプログラム（ロボバトラーでのゲーム木構築）を除いて、今まであまり気にしていなかったので、もっと気にすべきだと思いました。それと、処理時間をプログラム中で無理矢理計ったりしていたので、jhatなどのツールを使おうと思います。今まで気づいてなかったのは、勉強不足でした。それから、最近プログラムの中で処理時間を予測したいときがあったので、参考になりましたし、メモリや処理時間は大事だなあと改めて感じました。
+		        </p>
+		        <p>
+		        　目的、目標、手段に関して、やはりちょっと考え直しました。何年か後の自分がどうするべきかは少しは考えていても、曖昧な自分がいて、詰めが大分甘いと思っています。海外に出て、技能を持った人に会って、自分を向上させたい。だけれども、この目的自体曖昧な感じていて、このまま海外に出ただけでは失敗するような気がしています。それと、技能のない今に行くべきではないだろうし、林原研の方々と相談したいと思います。
+		        </p>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* 
+===================================== 
+
+	main.css
+
+===================================== */
+
+
+
+
+/* メイン
+================================= */
+html {
+}
+html body {
+    background-color:#DDD;
+    color: black;
+}
+
+/* 統合管理
+================================= */
+div#header-contents,
+div#local-nav,
+div#contents {
+	width: 800px;
+}
+
+div#header-contents, 
+div#local-nav,
+div#contents {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+ul#header-global-nav ul, 
+ul#header-global-nav li,
+ul#header-global-nav a,
+div#local-nav ul, 
+div#local-nav li,
+div#local-nav a {
+	display: block;
+}
+
+/* clearfix! */
+div#header-contents:after,
+ul#header-global-nav > li:after, 
+ul#header-global-nav:after,
+div#local-nav:after,
+div#local-nav ul:after {
+	display: block;
+	content: ".";
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+header a, nav a {
+	text-decoration: none;
+}
+
+header ul, nav ul {
+}
+
+header ul li, nav ul li {
+	text-decoration: none;
+}
+

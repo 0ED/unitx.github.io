@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+        <h2>スクリプト</h2>
+        <section>
+        	<h4>Q1. ワークフローを成り立たせている基礎は何だと思いますか。そして、 ワークフローがいかせるソフトウェア開発の場面を、脚本や台本と関連づけ て記してください。</h4>
+        	<div class="Block">
+	        	<p>
+				　ワークフローを成り立たせている基礎は、利便性だと思う。せっかくの人生という時間なのだ から、その時間を貴重に扱わなくてはならない。そのため、時間の効率をあげることはものすご く大事なことである。こんなとき、利便性があれば多くの時間を節約でき、多くのことを体験で きる。今や地球の裏側に行くのは容易だ。しかし、昔までこんなことは出来なかった。それは、 ワークフローがうまく成り立っていなかったからである。ワークフローがあることによって利便 性をあげられた。  ワークフローがいかせるソフトウェア開発の場面は、例えばあるプロジェクトがあったとき に、複数のファイルを同時に開かないといけない時がある。そんなときに、わざわざターミナル を起動して、専用のディレクトリに移動して、チェックアウトして、内部設計書を開いて、、など していると手間がかかり、時間もかかる。その一連の手順(これこそ台本のような物)があれ ば、効率良く開発を進められる。  また、プレゼンテーションするときにも、ワークフローを活かせると考えられる。例えば、製 品を紹介するなら、スムーズにプレゼンをしていきたい。そんなとき、事前にワークフロー(デ モを開ける、ターミナルを開くなら、aliasで$ に変える、スライドを開けるなど)で事前に段取 りを組んでおけば、クリック1発で用意できる。これこそ、プロジェクト演習の最後の授業で、活 かせるだろう。
+				</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <section>
+	        <h4>Q2. 今まで学んだプログラミング言語(CやJavaなど)と比較して、スク リプトとしてのプログラミング言語は、何が異なるのか、何が同じなのか、 それらを明確に記しなさい。</h4>
+	        <div class="Block">
+		        <p>
+				　今までのプログラミング言語(コンパイラ言語)に比べて、スクリプト言語との違いは、まず実 行までの経路にある。今までの言語(コンパイラ言語)は機械語への変換が必要だったのに対し て、スクリプト言語は普通、機械語への変換がいらない。そのため、実行スピードがスクリプト 言語の方が遅い(自分で実証はしてませんが、よく聞くので)。また、スクリプト言語は私が知 っている限りでは ブラウザで動作することが多く、Webアプリとして使われ、プログラミング初 心者なら気軽に利用できる。 似ている点は、機械語やアセンブリ言語のような低級言語と違い、コンパイラ言語やスクリプト 言語は高級言語であるため、コンパイラ言語でもスクリプト言語でも、手続き型やオブジェクト 指向型といった書き方の形態が似ている場合がある。例えば、Objective-CとSmalltalkはオブジ ェクト指向型で、書き方も似ていて(というよりもSmalltalkを乗っけたのかも)、C言語は多く のスクリプト言語に関連している。
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+		<section>
+	        <h4>Q3. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+				　授業の始めにコードリーディングに関して、「構造」「機能」「発生」を読んで理解し、コードを 読んで初めてコードリーディングしたことになると知って、今まで間違ったことをしていたと感じ ました。それから、Automatorは、毎日同じ作業をするような時に使えると思う。また、Q1で言 ったように、プレゼンをしたりするときの準備としてもかなり良いと思う。
+				今日はちょっと色々とあったので短いですが、次はがんばって書きます。
+				それから、PDFよりもWebの方が見やすいというのと、Web上の方が先生がダウンロードせずに 住むと思うので、そっちに移行します。それとQ1の最初の方の文章が変になって、すみません。
+				</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

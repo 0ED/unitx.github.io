@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、構文解析の方法。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜構文解析の方法</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>以下の記法を他の2つの記法に書き換えて、メールで提出してください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">問1</span></h5>
+	    		<p>
+				　式：- + a / b c * d e この前置記法から、他の2つの記法に変換すると以下の通りになる。<br />
+				式（中置記法）：(a + b / c) - d * e <br />
+				式（後置記法）：a b c / + d e * - <br />
+				また、前置記法、中置記法、後置記法の全てに当てはまる構文木の図を以下に示す。
+    		    </p>
+    	    	<a href="pack/images/polish_1.png">
+	    			<img src="pack/thumbnails/polish_1.png" alt="問1" />
+	    		</a>	    
+    		    
+    		    <h5><span class="for_inline_of_h5">問2</span></h5>
+    		    <p>
+    		    　式：a &gt; (b * (c + d) / e) この中置記法から、他の2つの記法に変換すると以下の通りになる。<br />
+				式（前置記法）：&gt; a / * b + c d e <br />
+				式（後置記法）：a b c d + * e / &gt; <br />
+				また、前置記法、中置記法、後置記法の全てに当てはまる構文木の図を以下に示す。
+    		    </p>
+				<a href="pack/images/polish_2.png">
+	    			<img src="pack/thumbnails/polish_2.png" alt="問2" />
+	    		</a>
+    		    
+    		    <h5><span class="for_inline_of_h5">問3</span></h5>
+    		    <p>
+    		    　式：a b / c d * e + &lt; この後置記法から、他の2つの記法に変換すると以下の通りになる。<br />
+				式（前置記法）：&lt; / a b + * c d e <br />
+				式（中置記法）：a / b &lt; (c * d + e) <br />
+				また、前置記法、中置記法、後置記法の全てに当てはまる構文木の図を以下に示す。
+    		    </p>
+				<a href="pack/images/polish_3.png">
+	    			<img src="pack/thumbnails/polish_3.png" alt="問3" />
+	    		</a>
+    		</div>
+    	</section>
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">後置記法</span></h5>
+				<p>
+				　関数では前置記法（ポーランド記法）が使われ、式では中置記法が使われているのだと考えられるが、多くの言語はプログラマ側からはUI的にわかりやすくするために、これらの記法が使われている。そして、コンパイラがこれを構文木として解釈し、後置記法と同じ結局振る舞いをする。しかし、Smalltalkでは後置記法も使われています。最近になって、Smalltalkでは多くの機構をすべて取り入れた感じの言語だなあと思いました。つまり、OS的にいうと一般ユーザ向けに、Windowsでは最低限の機能のみを備えつけており、MacOS, Unixでは一般ユーザから玄人向けに、多くの機能を備えている。Smalltalkなどは一般向けよりも、どちらかというと玄人に近い人が使うものなのかなと思いました。
+				</p>
+
+    		    <h5><span class="for_inline_of_h5">ビタミンC</span></h5>
+    		    <p>
+    		    　今まで完全にメディアに騙され、ビタミンCが体に良いものと思わされていたので、ショックでした。「アセロラはビタミンCがレモンの何十倍だ」とかいう宣伝文句は「腐食するのを防げる率は何十倍だ」なだけで、長持ちできるかどうかだけだった。。妙に、ミネラルウォーターにビタミンCがなぞに入っている理由がやっとわかりました。
+    		    </p>
+    		    <p>
+    		    　それから21年間も生きていて、ひたすらメディアに騙され続けていたので、ちゃんとした文献を読むように心がけようと思います。おそらくac.jpですら、勘違いしている情報があると思うので、一番は本家のサイトまたは書物だなと思いました。
+    		    </p>
+			</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

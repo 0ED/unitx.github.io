@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、LP リスト要素の回転。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜BNFのBNF</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>BNFの構文図式を習いましたね。では、BNFをBNFで記述してください。BNFをBNFで記述できれば、何が出来るようになるのかも記してください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">BNFのBNF</span></h5>
+    			<p>
+    			　下記のリンクにBNFをBNFで記述したテキストをPDFとして、添付します。PDFにしたのはTEXTだと文字化けが起こり、HTMLだとタグと認識される（タグ変換機は作っていない）ので、PDFとしました。下記のサムネイル画像を押していただくと、PDF（bnf.pdf）のリンクに飛びます。
+    			</p>
+    			<p>
+	    			<a href="pack/data/bnf.pdf">
+	    				<img src="pack/thumbnails/bnf.png" alt="BNFのBNF" />
+	    			</a>
+    			</p>
+    			
+    		    <h5><span class="for_inline_of_h5">BNFで何ができるか</span></h5>
+    			<p>
+    			　字句解析をBNFのBNFを使って解析をせずに、C言語によってBNF記法使って解析した場合、本当に正しい解析が行われているかが保証されないが、オートマトンを考えた上でBNFのBNFを使って、解析することによって、解析が正しく出来ていると保証される。これがBNFの利点であるので、字句解析に使われる理由の1つだと思います。
+    			</p>
+    			<p>
+    			　またおそらくですが、BNFのBNFを使うことで、文字、数字、特殊文字の中から一致するものを探すという手間が省け、字句解析の実行速度が早くなるかもしれない。それによって、コンパイルまたはインタプリタの速度が少しでも上げることが出来る。
+    			</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>Cコンパイラの作成過程を自分の言葉で説明してください。</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">Cコンパイラの作成過程</span></h5>
+				<p>
+				　BNFをC言語で作られたBNF解析機（メタコンパイラ）によって解析し、解析されたBNFとCで作られた字句解析機で解析を行った後、構文解析、意味解析、最適化コード生成をする（メタコンパイラ）。これによって、Cで書かれたファイルをコンパイルし、その後実行出来る。
+				</p>
+    		</div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">字句解析</span></h5>
+				<p>
+				　プログラミング言語を作るにあたって、字句解析をして来ましたが、先ほども言ったように、BNF記法を使ってはいる物のBNFのBNFを使ってはいなかったので、BNFのBNFを導入するべきだと思いました。
+				</p>
+				<h5><span class="for_inline_of_h5">プログラミング言語の選択</span></h5>
+				　プログラミング言語を知るにあたって、出来るだけ開発者の書いた書物を読もうと思いました。普段、言語のWEBドキュメントが見つかった場合はそれを読みますが、いくつかの言語は2次書物を読んでいたので、ところどころで知らないような知識があり、他の書物を読むこともありました。それは結局、開発者がどういう経緯で作ろうと思ったか、どういう分野において使おうとしたか、どういう風に使ってほしいかがわからないために、状況にあった言語の選択が出来ない。なので、開発者の書いた書物を読むことで、状況にあった正しい言語の選択を出来るように、また新しい言語が誕生したときに、その言語と今までの言語を見極めれる力がつくようになろうと思います。
+    		</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

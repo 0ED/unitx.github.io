@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper" id="futatunoSyokan">
+<div id="contents">
+    <header>
+    	<h1>LightKing</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>LightKingとはー</h4>
+    		<div class="Block">
+    			<p>
+    			　クロスプラットフォームライブラリcocos2d-x、blenderによって作った対戦ゲームです。言語はC++を使いました。プロジェクトとしての完成度は30%程度ですが、良ければ見ていただければと思います。
+    			
+    			</p>
+    		</div>
+    	</section>
+        
+		<section>
+			<h4>ロゴマーク</h4>
+    		<div class="Block">
+    			<div align="center">
+    				<a href="pack/images/LightKing.png">
+						<img src="pack/images/LightKing.png" alt="LightKing_LOGO"/>
+    				</a>
+				</div>
+    		</div>
+    	</section>
+        
+        <section>
+        	<h4>スライド</h4>
+	      	<div class="Block">
+	      		<p>
+	      		LightKingプロジェクトのスライドを以下に添付します。スライドのファイル形式は2パターンあり、PDFとKeynoteです。スライドを下のリンクに置いております。よければ見ていただければと思います。Keynote版（アニメーションあり）は自動ダウンロードされます。また、PDF（アニメーションなし）はPDFページに移ります。
+	      		</p>
+	      		<div align="center">
+		      		<a href="pack/data/LightKing.key">
+			      		<img src="pack/images/keynote.png" alt="Keynote of LightKing" />
+		      		</a>
+		      		<a href="pack/data/LightKing.pdf">
+			      		<img src="pack/images/pdf.png" alt="PDF of LightKing" />
+		      		</a>
+	      		</div>
+	      	</div>
+		</section>
+		
+		
+		<section>
+        	<h4>プロジェクトの成果物</h4>
+	      	<div class="Block">
+	      		<p>
+	      		下記にファイル（LightKing.zip）を添付しました。クリックすると自動ダウンロードされます。C++は初めてなので汚いコードですが、見ていただければと思います。
+	      		</p>
+	      		<div align="center">
+		      		<a href="pack/data/LightKing.zip">
+			      		<img src="pack/images/zip.png" alt="LightKing" /><br/>
+			      		LightKing.zip
+		      		</a>
+	      		</div>
+			 </div>
+		</section>
+		
+		<section>
+        	<h4>起動方法</h4>
+	      	<div class="Block">
+	      		<h5><span class="for_inline_of_h5">LightKingフォルダの構造</span></h5>
+	      		<p>
+	      		赤字のフォルダまたはファイルが、今回の成果物（ソースコードと画像）となります。
+	      		</p>
+	      		
+	      		<ul>
+			  		<li>LightKing
+				  		<ul>
+					  		<li>LightKing
+						  		<ul>
+							  		<li style="color:red;">Classes</li>
+							  		<li style="color:red;">Resources</li>
+							  		<li>ios</li>
+							  		<li>libs</li>
+							  		<li>Prefix.pch</li>
+						  		</ul>
+					  		</li>
+					  		<li style="color:red;">LightKing.xcodeproj</li>
+					  		<li>LOGO_57x57.png</li>
+					  		<li>LOGO_114x114.png</li>
+				  		</ul>
+			  		</li>
+			  	</ul>
+	      	
+	      	
+	      		<h5><span class="for_inline_of_h5">プロジェクト起動</span></h5>
+	      		<p>
+	      		「プロジェクトの成果物」でダウンロードしたzipファイル（LightKing.zip）を展開し、LightKingフォルダを作成します。そのフォルダに移動し、LightKing.xcodeprojをダブルクリックすることにより、プロジェクトを起動できます。そして、Runをクリックすればプログラムが実行されます。（cocos2d-xのフレームワークをインストールしていなくても、通常実行されるはずですが、もし出来なければ<a href="http://study-cocos2d-x.info/install-entry/12/">こちら</a>のサイトを参考に、cocos2d-xをダウンロードおよびインストールしてください。）
+	      		</p>
+			  	<img src="pack/images/down0.png" alt="LightKing" width="680px" height="470px"/>
+			  	<h5><span class="for_inline_of_h5">リソース（中身の確認）</span></h5>
+			  	<p>
+			  	上図のLightKingのフォルダ（リソース等の金庫）の中に成果物が入っています。ただし、下図を見てもらえればわかるように、Classes, Resources以外はcocos2d-xのライブラリ側のファイルまたはフォルダですので、Classes, Resourcesを見てもらえればと思います。
+			  	</p>
+			  	<img src="pack/images/down1.png" alt="LightKing" width="680px" height="470px"/>
+
+	      	</div>
+		</section>
+		
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title> 
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語小テスト、構文解析の小テスト。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜構文解析の小テスト</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>構文規則部（%%と%%の間だけ）を貼付けてください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">syns.yac</span></h5>
+	    		<pre class="brush: cpp;">
+			Program
+				: Statements					{ }
+			Statements
+				: Statement						{ }
+				| Statements Statement			{ }
+			Statement
+				: Declare SEMICOLON				{ }
+				| Assign SEMICOLON				{ }
+				| Print SEMICOLON				{ }
+			Declare
+				: Type Variables				{ }
+			Type	
+				: INT							{ }
+				| FLOAT							{ }
+			Variables	
+				: Variable						{ }
+				| Variables COMMA Variable		{ }
+			Assign
+				: Variable EQUAL Expressions	{ }
+			Print
+				: PRINT Expressions				{ }
+			Expressions
+				: Expression					{ }
+				| Expressions COMMA Expression	{ }
+			Expression
+				: Expression ADD Term			{ }
+				| Expression SUBTRACT Term		{ }
+				| Term							{ }
+			Term	
+				: Term MULTIPLY Factor			{ }
+				| Term DIVIDE Factor			{ }
+				| Factor						{ }
+			Factor
+				: Variable						{ }
+				| Constant						{ }
+				| LPAR Expression RPAR			{ }
+			Variable
+				: ID							{ }
+			Constant
+				: INTEGER						{ }
+				| REAL							{ }</pre>
+    		</div>
+    	</section>
+    	
+       	<section>
+			<h4>正規表現部（%%と%%の間だけ）を貼付けてください。</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">rexp.lex</span></h5>
+	    		<pre class="brush: cpp;">
+				"int"					{ return(INT); }
+				"float"					{ return(FLOAT); }
+				"print"					{ return(PRINT); }
+				[a-zA-Z_][a-zA-Z0-9_]*	{ return(ID); }
+				[0-9]+					{ return(INTEGER); }
+				[0-9]*"."[0-9]+ 		{ return(REAL); }
+				";"						{ return(SEMICOLON); }
+				","						{ return(COMMA); }
+				"="						{ return(EQUAL); }
+				"+"						{ return(ADD); }
+				"-"						{ return(SUBTRACT); }
+				"*"						{ return(MULTIPLY); }
+				"/"						{ return(DIVIDE); }
+				"("						{ return(LPAR); }
+				")"						{ return(RPAR); }
+				"\n"					{ linecounter++; }
+				"\r\n"					{ linecounter++; }
+				"\r"					{ linecounter++; }
+				" "|"\t"				{ }
+				"/*"					{ comment(); }
+				.						{ return(UNKNOWN); } </pre>
+    		</div>
+    	</section>
+    	
+    	<section>
+			<h4>構文解析生成系とは何かを千文字でまとめてください。</h4>
+    		<div class="Block">    		    
+    			<h5><span class="for_inline_of_h5">開発者</span></h5>
+    		    <p>
+    		    　初めに登場した構文解析生成系は、Stephan Johnsonさんによるyaccであり、それを改良した構文解析生成系がVern Paxsonさんによるbisonである。Stephan Johnsonさんはプログラミング言語MATLABの開発に貢献し、Vern Paxsonさんはトランスポートプロトコルからの侵入検知、インターネットセキュリティといったネットワークの分野で数々の功績を残す一方、FlexやBisonといった解析器を作った人物である。
+    		    </p>
+    		    <h5><span class="for_inline_of_h5">構文解析生成系</span></h5>
+				<p>
+				　この構文解析生成系がStephan Johnsonさんによって作られるまでのことを考えると、文列、文、宣言、型、変数列.. というような構文木を出力する構文解析器が必要だった。私自身そのようなプログラムを書いたが、何度もプログラム上に不備が存在し、それを埋めるようなプログラムとなった。すべての構文がプログラム上で本当に満たされているのかをテストするのはかなり大変で、かつ新たな言語での構文解析器を作ったときにテストを新たにしないといけないなかった。その手間を省き、効率の良いシステムを構築するために構文解析生成系が作られた。つまり、構文解析生成系とは構文解析器（字句解析によって、ラベル付けされたトークンをコードの構造ごとにわけ、文列、文、宣言、型、変数列.. というように解析するもの）を作るメタ言語であり、プログラマはバッカス・ナウア記法による記述をし、このメタ言語を使うだけで、構文解析器を作ることが出来る物である。
+				</p>
+				<h5><span class="for_inline_of_h5">構文解析生成系の進化</span></h5>
+				<p>
+				　FlexやBisonはVern Paxsonさんが作ったといったが、この人物は最初に言った通り侵入検知やインターネットセキュリティに元々特化して研究している（今回は深く掘り下げて調べれていませんが）。
+				つまり、テストして確認し、セキュリティホールや脆弱性を見つけるという手法するよりも、オートマトンを使って、理論的にセキュリティホールや脆弱性を見つけるという手法を使っているのだと想定でき、字句解析器や構文解析器の場合も同様に、lexやyaccでの欠陥部分（脆弱性）を見つけ、Flexやbisonを提唱したのかもしれない。つまり、各個人が生成系を作るよりもStephan Johnsonさん、Vern PaxsonさんらがつくったFlex,bisonを利用した方が効率的にも安全性的にも良いということが言えるだろう。
+				</p>
+			</div>
+	    </section>
+    	
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">    		    
+    		    <h5><span class="for_inline_of_h5">オートマトンによる検知</span></h5>
+				<p>
+				　改めてオートマトンによるシステムまたはプログラムの脆弱性の検知の重要性を知る機会になりました。そして、本当に重要な（クリティカルな）システムにおいてxUnitなどだけでなく、理論的な証明は必ず必要となってくると思います。実際、高校や大学1回生のときと比べ、理論的な証明をする分野がよりクリティカルなものになって来ていると思うので、今後とも理論的証明を忘れずにシステム設計をしていければ良いなあと思います。
+				</p>
+				
+    			<h5><span class="for_inline_of_h5">解析器</span></h5>
+    		    <p>
+    		    　これまで習ってきた字句解析器、構文解析器に関して、実際に作ると本当に大変でプログラムの抜けが出てしまうことが起こっていたので、今までの物ではなく、やはりFlex(lex), bison(yacc)をありがたく使わしてもらいます（その方が構文の修正がアジャイル的に必要になったときに効率的なので）。それから、この解析器はもしかしたら、暗号化、復号化、文字エンコーディングにも使われているんじゃないか（たぶん）と思ったので、多用していければなあと思います。
+    		    </p>
+			</div>
+	    </section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、字句解析器生成系。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushCpp.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜字句解析器生成系</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>スキャナ（scanner）のプログラムにおいて「make src」が通るように改造せよ。（UNKNOWNが出ないように、出来る限りの処置を施し、当該のrexp.lexを入りつけてください。）</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">rexp.lexの断片</span></h5>
+    			<pre class="brush: cpp;">
+					[/*].*[*/]				{ return(COMMENT); }
+					[a-zA-Z_][a-zA-Z0-9_]*	{ return(ID); }
+					[0-9]+					{ return(INTEGER); }
+					[0-9]+"."[0-9]+"f"*		{ return(REAL); }
+					";"						{ return(SEMICOLON); }
+					","						{ return(COMMA); }
+					"="						{ return(EQUAL); }
+					"+"						{ return(ADD); }
+					"-"						{ return(SUBTRACT); }
+					"*"						{ return(MULTIPLY); }
+					"/"						{ return(DIVIDE); }
+					"("						{ return(LPAR); }
+					")"						{ return(RPAR); }
+					"{"						{ return(LBRACE); }
+					"}"						{ return(RBRACE); }
+					"\'"					{ return(SINGLEQUOT); }
+					"\""					{ return(DOUBLEQUOT); }
+					"&"						{ return(ANPER); }
+					"|"						{ return(VERTICALBAR); }
+					"%"						{ return(PERCENT); }
+					"#"						{ return(NUMBERSIGN); }
+					"\\"					{ return(BACKSLASH); }
+					"."						{ return(PERIOD); }
+					"\r"|"\n"|" "|"\t"		{ }
+					.						{ return(UNKNOWN); }</pre>
+				<h5><span class="for_inline_of_h5">LEXERに関する補足</span></h5>
+				<p>
+				　今回の字句解析器の字句は、<a href="http://docs.python.org/2/library/token.html">こちら</a>を参考にしながら命名しています。そして上のrexp.lexに関して、字句として判別するべき特殊文字は他にもありますが、仕様はないので、今回はsrc.txtに対応する特殊文字のみを扱っています。
+				</p>
+    		</div>
+    	</section>
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+				
+    		    <h5><span class="for_inline_of_h5">字句解析</span></h5>
+				<p>
+				　今回LEXERを使ってみて、自分で作った字句解析器では、さまざまな言語処理系を作ったときに字句解析器を新たに作らなくてはならないですが、レクサーではrexp.lexの部分を少し変えるだけで解析方式を返ることが出来るので、いろいろな場面で使える解析器だと思いました。また、解析時間においても、制御文によって判別した（自分で作った）字句解析器では0m0.003s、レクサーでは0m0.002sでした。効率的にも良いので、言語の字句解析器にはレクサーを使います。
+				</p>
+				
+    		    <h5><span class="for_inline_of_h5">数字で判断するか否か〜教員点問題〜</span></h5>
+				<p>
+				　ある意味偏差値で数字するのは評価も自動化できて楽だとも思います。しかし世界のテクノロジーが発展していくためには、そんなものでは判断できないと思います。茂木健一郎さんは、ジャック・アンドレイカの「カーボンナノチューブで膵臓癌の早期発見検査薬」の話を加えて、こんなことおっしゃっていました。"もし君が、カーボンナノチューブで膵臓癌の早期発見検査薬を作りたいって思ったとする。それで、各大学に『こういう研究をしたいんです』って手紙を送ったとする。そのようなことをしてたら、日本の大学に受かるかな？"[<a href="http://numbers2007.blog123.fc2.com/blog-entry-2821.html">1</a>] 。答えは『いいえ』。これだと本当に研究したい人がいけず、いいところにとにかく就職したいと思う人しか大学に集まらない。ハーバード大学でも1時間〜2時間面接して選んでいるのに、日本はどうしたもんかと思います。また、周りでも成績が良いから、こいつすごい見たいな風習があり、確かにそれはそれですごいと思います。でも、僕は成績が普通でも面白いものを作る人だったり、面白い人の方がダントツに良いと僕は思います。
+				</p>
+				
+				<p>
+				　最後に教員点問題に関して会議のことだからか、周りの教員の人らは隠そうという動きがありますが、やはり生徒のことなのに、生徒に一切の発言権もなく決めるのは不公平だと僕も思います。
+				</p>
+			</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

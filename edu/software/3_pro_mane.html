@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+        <h2>プロジェクトマネジメント</h2>
+        <section>
+        	<h4>Q1.本日、プロジェクトマネジメントについて、スコープ・タイム・コスト・品質の4つに関する管理手法を学びました。PMBOKでは、その他に人的資源・伝達・リスク・調達の4つにかんする管理手法もガイダンスされています。それらを調べて記してください。</h4>
+        	<div class="Block">
+	        	<p>
+				・スコープは、作成すべき成果物と作業の範囲を自社の作業範囲がどこまでなのかを明確にすることであり、範囲を管理しす。
+				・タイムマネジメントは、プロジェクトを所定の時期に確実に完了させるための必要なプロセスで、
+				ガント・チャートやマイルストーン・チャート、ネットワーク図等によって記述される。
+				・コストは、資源計画、コスト見積もり、予算設定、コスト管理というプロセスに分類され、予算を管理することであり、
+				ほとんどが人件費である。もしコストを高く見積もれば、他のソフトウェアに市場勝つことが難しくなり、
+				もしコストを低く見積もれば赤字になってしまうため、表裏一体？のような関係となる。
+				・品質はプロジェクトのニーズを確実に満足させるためのプロセスであり、
+				品質が低ければ顧客は満足しない。即ち、品質は顧客の満足の充足に直結する要素である。
+				・人的資源はプロジェクトに参画する要員のマネジメント方針の策定を行い、
+				各要員の役割と果たすべき責任を定義する必要がある。
+				また、要員をどのタイミングで調達し、どのように育成する必要がある。
+				・伝達はテストで出たバグや問題の重要度に応じて、関係者とすばやく連携をとり対応することである。
+				・リスクはプロジェクトで発生するリスクに対して、どのように取り組み、処理するか計画することを目的としており、
+				リスク発生確率と影響度の定義などを行い、計画書に記載する。
+				・調達は不足分の要員を外部企業から調達することであり、
+				人数的にも技術的にもメンバーが不足しやすい大きなプロジェクトは
+				外部企業に依頼し、下請け会社に調達する必要がある。
+	        	</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <section>
+	        <h4>Q2.次のような9つの作業からなるプロジェクトがあります。作業Eの所要日数を9日から6日に短縮すると、このプロジェクトの最短作業日数を何日短縮できますか。</h4>
+	        <div class="Block">
+		        <p>
+				　まず、作業Eの所要日数を9日でプロジェクトを組み立てると、作業Aの後ES（最早開始時刻）:4、
+				作業Bの後ES:4+7=11、作業Dの後ES:4+2=6、作業Cの後ES:11+2=13、作業Eの後ES:6+9=15、
+				ここで13と15を比べて、作業C,Eの後はES:15となる。そして、作業Gの後ES:15+3=18、
+				作業Iの後ES:18+2=20で作業日数は20日となる。
+				
+				もし、作業Eの所要日数を6日でプロジェクトを組み立てると、先ほどの計算より省略して、
+				作業A、作業B、作業Cの後ES:4+7+2=13、作業Gの後ES:13+3=16、
+				作業A、作業Dの後ES:4+2=6、作業Fの後ES:6+6=12、作業Hの後ES:12+5=17、
+				ここで16と17を比べて、作業G,Hの後ES:17となる。そして、作業Iの後ES:17+2=19で
+				作業日数は19日となる。
+				これらのことから、9日から6日に短縮すると、最短作業日数を1日（20-19=1）短縮できた。
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+		<section>
+	        <h4>Q3. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+				　SOW、WBS、PDCAなど関して学んで、計画の大事さを改めて知りました。
+				今まで計画を立て、実行したことはもちろんありますが、
+				その後の評価、改善はほったらかしで、バグも残しっぱなしであることも
+				ありました。最近になって昔のプログラムを作り直すようにはなりましたが、
+				まだまだ、正しく効率の良いプロジェクトを成功させていないので、
+				正しく効率の良いプロジェクトするためにこれから学んでいきたいと思います。
+				
+				小テスト【樹状整列】に関して、プロジェクト演習ではメンバーの能力の差があるので、
+				ちょっといやでしたが今回はメンバーを自由に構成できるので楽しみです。
+				また、プロジェクト演習は荻原教授なので、コピーマージモデルを使っていません。
+				なので、今回から取り入れたいと思います。
+				ただ問題なのが、リポジトリで自分でサーバを作るのか、
+				（これは作れたとして、今の知識ではセキュリティホールができていまう）
+				それともリポジトリを提供してくれるサイトがあるのか今わからないので
+				これから調べたいと思います。もし良いリポジトリを提供してくれるサイトが
+				あれば教えていただけるとうれしいです。
+				
+				それからちょうどこの前、TAの森さんに寺子屋でお世話になったので
+				ちょっと残念でした。でも、新しいTAさんはかわいかったので、
+				それはうれしいです（笑）。
+				</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+    	<h2>窓（ペイン）の構造</h2>
+    	
+    	<section>
+	        <div id="classes">
+	        	<h4>Q1. 構造を表現したダイアグラム（クラス図やオブジェクト図など）を「astah* community」を用いて書きなさい。</h4>
+				<div class="class" id="AllEmpty">
+	            	<h5><span class="for_inline_of_h5">クラス関係を表した図</span></h5>
+	                <a href="software/images/pane/AllEmpty.png">
+	                	<img src="software/images/pane_thumbnail/AllEmpty.png" alt="クラス関係を表した図"/>
+	                </a>
+	            <!-- /.class --></div>
+	            
+	            <div class="class" id="Example">
+	            	<h5><span class="for_inline_of_h5">Exampleクラス</span></h5>
+	                <a href="software/images/pane/Example.png">
+	                	<img src="software/images/pane_thumbnail/Example.png" alt="Exampleクラス"/>
+	                </a>
+	            <!-- /.class --></div>
+	            
+	            <div class="class" id="PaneModel">
+	            	<h5><span class="for_inline_of_h5">PaneModelクラス</span></h5>
+	                <a href="software/images/pane/PaneModel.png">
+	                	<img src="software/images/pane_thumbnail/PaneModel.png" alt="PaneModelクラス"/>
+	                </a>
+	            <!-- /.class --></div>
+	            
+	            <div class="class" id="PaneView">
+	            	<h5><span class="for_inline_of_h5">PaneViewクラス</span></h5>
+	                <a href="software/images/pane/PaneView.png">
+	                	<img src="software/images/pane_thumbnail/PaneView.png" alt="PaneViewクラス"/>
+	                </a>
+	            <!-- /.class --></div>
+	            
+	            <div class="class" id="PaneController">
+	            	<h5><span class="for_inline_of_h5">PaneControllerクラス</span></h5>
+	                <a href="software/images/pane/PaneController.png">
+	                	<img src="software/images/pane_thumbnail/PaneController.png" alt="Exampleクラス"/>
+	                </a>
+	            <!-- /.class --></div>
+	        <!-- /.classes --></div>
+    	</section>
+        
+        <section>
+	        <h4>Q2. 構造の小テストで身に付いたことや感想などを1000字以上で。</h4>
+	        <div class="Block">
+		        <p>
+		        　今までクラス図を書くとき、すべてのクラスに瓶詰めしていたので、クラス関係が大分わかりづらい物になっていました。そのため、プロジェクト演習（荻原教授）のときも1つの画像ファイルに瓶詰めして、プロジェクトメンバーがクラス図を読むのをためらうほどのクラス図となってました。しかし、スコープの当たっているクラスごとにそれぞれ瓶詰めをすることによって、昔よりも今回のクラス図の方が断然読みやすくなり、クラス同士の関係を把握することが出来るように設計できました。ただ、気がかりなのが、paneパッケージ内にmvcパッケージとutilityパッケージを入れるべきかどうかということでした。パッケージごとに分けて書くと、クラス関係の線がはびこって美しくないですが、外部ファイルのパッケージから取ってきていると考えて、結局分けました。また、外部ファイルからとってきたパッケージ（mvcとutility）も瓶詰めして書くのかどうかも少し迷いましたが、ライブラリを使っていると考えて、瓶詰めしませんでした。そして、樹状整列のプロジェクトで、Forestパッケージ以外にパッケージを作っていなかったので、もう少し、体裁を整えるべきだと思いました。また、ExampleでpaneModel、paneView、paneControllerのインスタンス生成をしていたので、Exampleを集約していると思っていましたが、そういう動的なものは表現していないと知って、クラス図は静的な物であるということを理解しました。<br />　それから、「astah* community」に関して徐々になれてきて、缶詰と瓶詰めの使い分けなどがわかってきて、集約や関係の感覚を徐々につかめてきました。そして、「astah* community」のデフォルトの設定を普段自分が使う設定に調整して、効率化をはかれるようになってきました。ただ、やりたい操作が有料版にしかなかったり、ショートカットキーがあまり備わってなかったり、設定したときにその設定が新たなファイルを作ったときしか更新されないため、不便な面も多々あります。もちろん、有料版にバージョンアップしたいのですが、なかなか学生には手が届かない値段（3万円）であるので、迷っています。しかし、青木さんの言うように自己投資は大事だと思うので、別の有料UMLツールで良さそうなのも見てみようと思います。
+		        </p>
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

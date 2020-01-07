@@ -1,0 +1,6 @@
+@charset "shift_jis";
+
+/* StyleSheet全体
+========================================== */
+@import "reset.css";
+@import "report04.css";

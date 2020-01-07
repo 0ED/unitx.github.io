@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、ドラゴン。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushPython.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜ドラゴン</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>約20行ほどのPythonプログラミングを行って、完成したdragon.pyを添付してください。</h4>
+    		<div class="Block">
+	            <h5><span class="for_inline_of_h5">ドラゴン</span></h5>
+	            <p>
+	            	<a href="pack/data/dragon01/dragon.py">こちら</a>のリンクにversion1.0のdragon.pyを添付します。<br />
+	            	<a href="pack/data/dragon02/dragon.py">こちら</a>のリンクにversion1.0.1のdragon.pyを添付します。
+	            </p>
+	        </div>
+    	</section>
+        
+        <section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">Python</span></h5>
+				<p>				
+				　今回のPythonでの課題を作っていくときに気づいたのは、自分以外の人の書いたコードを使って書くときに、例えばDragonTriangleの中のdef __init__(self, vertex1, vertex2, vertex3):において、普段なら型名があってどういう型を使えば良いかわかりますが、Pythonでは数値なのかオブジェクトなのか、たまにわからないので、複数人で作る場合や何年後かの自分が見たときに、わかるように工夫してコーディングしないといけないと思いました。
+				</p>
+				<p>
+				　また、今回自分の書いたコードを見ると、他の言語でこのコードを表現するのに20行では表現できないなあと思いました。特に無名関数lambdaは関数を一つ削減できるので、読む面においても書く面においても、すごく効率的で他の言語にはないすばらしい機能だと思います（Java8で出るらしいですが）。
+				</p>
+				
+				<h5><span class="for_inline_of_h5">ドラゴンテキスト</span></h5>
+				<p>
+				　ドラゴンのテキストファイル（dragon.txt）を読み込んで条件付けを行いましたが、下のテキストファイルの部分テキスト（dragon.txt）の4行目と5行目において、本来なら正規表現によってinteger, float, longを判別して、その判別した型ごとに変換すべきです。
+				</p>
+				<pre class="brush: python; highlight: [4,5]">
+					body_name dragon
+					number_of_vertexes 1166
+					number_of_triangles 2328
+					vertex_record x(float) y(float) z(float)
+					triangle_record index_of_first_vertex(integer) index_of_second_vertex(integer) index_of_third_vertex(integer)
+					end_header</pre>
+				しかし、今回作成した下のdragon.pyの部分コードの13行目と17行目において、intやfloatは関数であるので、変換出来ませんでした。execというのがあったので、それを次のversion1.0.1に追加できれば追加しようと思います。そして、明日にマウスドラッグで動くversion2.0をリリースしようと思います。
+				<p>
+					<pre class="brush: python; highlight: [13,17]">
+				while True:
+					a_string = a_file.readline()
+					if len(a_string) == 0: break
+					a_list = a_string.split()
+					if "number_of_vertexes" == a_list[0]:
+						number_of_vertexes = int(a_list[1])
+					if "number_of_triangles" == a_list[0]:
+						number_of_triangles = int(a_list[1])
+					if "end_header" == a_list[0]:
+						vertexes = []
+						for index in range(number_of_vertexes):
+							a_string = a_file.readline()
+							vertex = map(float, a_string.split())
+							vertexes.append(vertex)
+						for index in range(number_of_triangles):
+							a_string = a_file.readline()
+							indexes = map(int, a_string.split())
+							vertex1, vertex2, vertex3 = map((lambda index: vertexes[index-1]), indexes)
+							a_triangle = DragonTriangle(vertex1, vertex2, vertex3)
+							self._triangles.append(a_triangle)</pre>
+				</p>
+				
+				<h5><span class="for_inline_of_h5">ごり押しドラゴンversion1.0.1での追加機能？</span></h5>
+				<p>
+				　今回version1.0では、仕様を満たすように作りましたが、version1.0.1ではマウスドラッグを実装しています。とは言っても、日曜日の間にある程度考えた結果うまく行かなかったので、途中まで作っていたときのものを添付しています。ドラッグはかなりごり押しで、motionメソッドを見ていただければわかると思います。
+				　OpenGLの内部メソッドにはgluUnProject(x,y,0)があり、それによってクリックしたx,y座標を3Dでのx,y,z座標に変換してくれるライブラリが用意されましたが、うまく使えず2次元から3次元への変換はうまく行きませんでした。ドラッグを実現するという宣言をしたものの出来なかったので報告させていただきました。
+				</p>
+				<p>
+				　ドラッグの実装にチャレンジしてみて思ったのは、blenderなどの3Dソフトウェアでグラフィックを作るときにいとも簡単にドラッグ、ズーム、レンダリング、スパークルなどを操作できていますが、そこには数学者によって生み出された座標計算が詰まっている感じを改めて実感し、大事に使おうと思いました。
+				</p>
+			</div>
+    	</section>
+        
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

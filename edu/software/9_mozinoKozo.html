@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+        <h2>文字の構造</h2>
+        <section>
+        	<h4>Q1. 文字に関するいくつかの単語を列挙しますので、それらを分析して、缶詰めのクラス図を仕上げてください。</h4>
+			<p>
+        　	　下記に、「文字の構造」のクラス図を添付します。
+        	</p>
+        	<h5><span class="for_inline_of_h5">文字の構造</span></h5>
+            <a href="software/images/mozi_kozo.png">
+            	<img src="software/images/mozi_kozo.png" alt="文字の構造"/>
+            </a>
+            
+			<h5><span class="for_inline_of_h5">文字の構造</span></h5>
+            <p>
+		　少し補足ですが、仮名は漢字を基にして作られたので、仮名は漢字を継承しています。また、部首はキーワードにはなかったのですが、講義中での解に確か書いていたので、追加しました。ちなみに、時間的な問題もあったため、サムネイル画像ではありません。<br /><br />
+        	</p>
+        </section>
+        
+        <section>
+	        <h4>Q2. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+		        　今日クラス図に関して、改めて学び、少し勘違いしていた部分が解消されました。例えば、集約とコンポジット集約の違いだったり、関連の矢印ありとなしに関してだったり、今まで抜けていた部分が補正されたような気がします。それから、この前のレポートで言っていたPythonに関してですが、Smalltalkのようにコードを書きながら、実行することは出来ませんが、少々のコードなら対話できて、今のところ色々と扱いやすく、良い言語だったので、ちょっとしたアプリケーションを作る用に使おうと思います。また、Javaで50行以上かかったコード（世界のナベアツアルゴリズム）が8行で出来たので、なかなか感動しました。それと、"まったく"関係ありませんが、さっきレポートを書きながら、シャラポアの話をテレビで知って、もっと努力しようと思いました。
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+        <h2>小舟の事態</h2>
+        <section>
+        	<h4>Q1. 小舟の問題を状態遷移図に仕上げてください。</h4>
+			<div class="class" id="ship">
+            	<h5><span class="for_inline_of_h5">状態遷移図</span></h5>
+                <a href="software/images/ship/ship.png">
+                	<img src="software/images/ship_thumbnail/ship.png" alt="状態遷移図"/>
+                </a>
+            <!-- /.class --></div>
+        </section>
+        
+        <section>
+	        <h4>Q2. その他、感想など</h4>
+	        <div class="Block">
+		        <p>始めに。細かなイベントの情報を足そうとしていましたが、構造を理解したりするのに時間がかかったりもあったため、時間内での細かなイベントの情報の追加は出来ませんでしたので、ダウンロードイメージの修復などと共に、後日出させていただきます。<br />
+		        それはさておき、状態遷移図に関して、樹上整列の基本設計（外部設計）で前に書こうと思っていましたが、よくわからず、結局シーケンスと缶詰めクラスだけの設計となっていました。しかし、今日の講義をきっかけに少し感覚をつかんだように、思います。ですので、今後基本設計で使うと共に、樹上整列の基本設計の状態遷移図を練習がてらに、作りたいと思います。
+		        
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

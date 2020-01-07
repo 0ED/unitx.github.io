@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jasper</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Jasper｜Darwin" />
+    <meta name = "description" content="画像検索サイトJasper。画像中の人数から、画像を検索できる。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+    <link href="pack/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/system.js"></script><!-- MyJavaScript -->
+ 	<script><!--
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: 10,
+			values: [ 0, 10 ],
+			slide: function( event, ui ) {
+				$( "#amount" ).val( ui.values[ 0 ] + "人"+ " - " + ui.values[ 1 ]+"人" );
+				document.getElementById('number1').value=ui.values[ 0 ];//ここでフォームに代入
+				document.getElementById('number2').value=ui.values[ 1 ];//ここでフォームに代入
+			}
+		});
+		//初期スライダー位置設定　以下
+		$( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) + "人" +" - " + $( "#slider-range" ).slider( "values", 1 ) + "人");
+		
+		//ここでフォームに代入（スライダ初期状態）
+		document.getElementById('number1').value=$( "#slider-range" ).slider( "values", 0); 
+		document.getElementById('number2').value=$( "#slider-range" ).slider( "values", 1); 
+	});
+	--></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="Jasper" id="index">
+<div id="contents">
+    <form action="jasper.php" method="post">
+		<div id="seacher-space">
+			<div align="center">
+				<img src="pack/images/jasper.png" alt="Jasper's logo" />
+			</div>
+			<div id="searcher">
+				<input type="text" id="search-textarea" name="keyword"/>
+				<button type="submit" id="search-start">検索</button>
+			<!-- /#seacher --></div>
+		<!-- /#seacher-space --></div>
+		
+		
+		<!-- ボタン押したら表示 -->
+		<div align="center">
+			<button type="button" id="setButton" alt="システム" align="center"/>
+				<!--<img src="pack/images/system.png" />-->
+			</button>
+		
+			<div id="systemPanel" style="display: none;">
+				<div id='slider-range'></div><!-- Show Slider ! -->
+				<input type='text' id='amount' style='border: 0; color: #f6931f; font-weight: bold; display: inline;' />
+				<input type='hidden' name='number1' id='number1' />
+				<input type='hidden' name='number2' id='number2' />
+			</div>
+		</div>
+	</form>
+<!-- /#contents --></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="futatunoSyokan">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+    </header>
+    
+    <article>
+        <h2>コードリーディング</h2>
+        <section>
+        	<h4>Q1. 配布資料『プログラマは「書く」より「読む」』という千字ほどの文章を読んで、感じたこと、考えたことを記してください。</h4>
+        	<div class="Block">
+	        	<p>
+				　私自身コードリーディングをしたのは最近でした。去年のロボバトラー2という発展プルグラミング演習Ⅱの課題で、優秀プログラムが10ちょっと公開され、すべて読みました。もちろん、ゴリゴリなものがほとんどでしたが、中には私にとって参考になるプログラムもあったので、良い経験となりました。また、参考書のコードを読んでいても、どんなコードが良いのか少しずつわかってくるようになりました。青木さんのおっしゃるように、読むことは本当に大事だと思います。私は数ヶ月前に気づかされましたが、毎日読んではいません（時々です。）。青木さんの記事に書いてある通り、読むことを1つの生活リズムとして取り入れていきたいです。また、私はプログラミングに歯止めをかけられず、遅くまでプログラミングしてしまうことがあります。なので、これからは意識して歯止めをかけていきたいです。（絶対に）
+	        	</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <section>
+	        <h4>Q2.たくさんのJavaのプログラムをゲットしました。これらをどのように読んでゆき、自分の物にしてゆきますか、その手段を具体的に記してください。</h4>
+	        <div class="Block">
+		        <p>
+				　これらのプログラムの中身を見て、変数名やメソッド名の付け方をどのようにつけているのか、コメントの量や内容、引数をどの程度にし、メンバ変数をどの程度使うのかというのをコードを読んで自分の物にしていきたい。
+				コードの読みやすさに関して、以前図書館で「リーダブルコード」という本を借りた（ちょうど今日返却しましたが）。
+				そこに、どのように変数をつけるべきかが色々と書かれていた。例えば、良いコメントを書くよりも良いコード（メソッド名など）を書いた方が良いだとか、スコープの小さい範囲で使う変数は短くても良いが、なるべく無駄な変数はないようにしよう等々。しかし実際コーディングに取り入れるとなると、なかなか難しい物で、やはり玄人のコードを読んで玄人の書き方を見慣れていなければ良いコードはかけません。ですので、この手に入れたプログラムから自分にとって必要な部分を取り入れていきたい。
+		        </p>
+	        <!-- /.Block --></div>
+        </section>
+        
+		<section>
+	        <h4>Q3. その他、感想など</h4>
+	        <div class="Block">
+		        <p>
+				　インスタンス変数に関して、aSampleのように書くと良いと言うのは知らなかったので取り入れようと思います。また、私はjarファイルをつくるときマニフェストファイルやXMLの書き方を知らず、ネットで無理矢理調べて作っていたので、今後Sampleを利用して、プロジェクトを進めていきたいです。それから、樹上整列プロジェクトはある程度話し合い、雰囲気をつかむ所までいけました。新たな課題も増えたので早めにこなしていきたいです。
+				</p>
+	        <!-- /.Block --></div>
+        </section>
+        
+        <span id="time">
+            <script type="text/javascript">
+			  var dateObj = new Date( document.lastModified );
+			  var dateYear = dateObj.getFullYear();
+			  var dateMon = dateObj.getMonth() + 1;
+			  var dateDate = dateObj.getDate();
+			  var dateHour = "0"+dateObj.getHours();
+			  var dateMin = "0"+dateObj.getMinutes();
+			  var dateSec = "0"+dateObj.getSeconds();
+			  dateHour = dateHour.substr(dateHour.length-2, 2);
+			  dateMin = dateMin.substr(dateMin.length-2, 2);
+			  document.write( "最終更新日時:  "  );
+			  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+			  document.write( dateHour + ':' + dateMin + '<br>' );
+			</script>
+        </span>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

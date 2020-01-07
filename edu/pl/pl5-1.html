@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>プログラミング言語</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜プログラミング言語" />
+    <meta name = "description" content="プログラミング言語、OOP。" />
+        
+    <!-- CSS -->
+    <link href="pack/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="pack/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="pack/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="pack/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="pack/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.config.clipboardSwf = 'pack/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="pack/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+<body class="jasper">
+<div id="contents">
+    <header>
+    	<h1>PL｜LP 相思相愛</h1>
+    </header>
+    <article>
+    	<section>
+			<h4>相思相愛の述語を記してください。（Prologで実装しなさい。）</h4>
+    		<div class="Block">
+    			<h5><span class="for_inline_of_h5">ソースコード</span></h5>
+				<pre class="brush: java; highlight: 7">
+					?- remove.
+					likes(john, apple).
+					likes(john, wine).
+					likes(john, mary).
+					likes(mary, wine).
+					likes(mary, john).
+					lovers(X, Y) :- likes(X,Y), likes(Y,X).
+					?- clear.
+					?- listing.
+					?- lovers(X, Y).</pre>
+					
+    			<h5><span class="for_inline_of_h5">実行結果</span></h5>
+				<pre class="brush: java;">
+					yes
+					?- listing.
+					likes(john,apple).
+					likes(john,wine).
+					likes(john,mary).
+					likes(mary,wine).
+					likes(mary,john).
+					lovers(X,Y) :- 
+						likes(X,Y), 
+						likes(Y,X).
+					yes
+					?- lovers(X,Y).
+					X = john ,
+					Y = mary ;
+					X = mary ,
+					Y = john ;
+					no</pre>
+    		</div>
+    	</section>
+        
+        
+    	<section>
+			<h4>その他、感想</h4>
+    		<div class="Block">
+    		    <h5><span class="for_inline_of_h5">Prolog</span></h5>
+				<p>
+				　非手続き型プログラミング言語"Prolog"を使ってみて、今までの言語と比べて、"for","while","if"と言った構文がない分、ブレース括弧がなくて、コードが横に長くならない特徴があると単純に思いました。そして、普通ならソースコード7行目のように、for-eachで複数の値同士が一致するかを判別する物を1行で記述していて、PythonやRuby等のような内包表記よりもスマート（賢い）だと思いました。
+				</p>
+				<p>
+				　また、関数呼び出しが中心なものだと感じました。そして、ユニフィケーション（統合）に関しては、初めて知ったもの（arrow?）で、今まで束縛、代入しか意識していなかったので、参考になりました。ユニフィケーションを生かすとすれば、木探索でノードをつなぐときに、普通親ノードと子ノードたちを束縛していたものを子ノードたちだけに統合が起これば、奇麗に記述することができると思いまし、もっと他の使い道もあるはずなので、今後他の言語で出てくることを期待したいです。（または作るか。）
+				</p>
+				
+    		</div>
+    	</section>
+    	
+		
+		<div id="info">
+	            <script type="text/javascript">
+				  var dateObj = new Date( document.lastModified );
+				  var dateYear = dateObj.getFullYear();
+				  var dateMon = dateObj.getMonth() + 1;
+				  var dateDate = dateObj.getDate();
+				  var dateHour = "0"+dateObj.getHours();
+				  var dateMin = "0"+dateObj.getMinutes();
+				  var dateSec = "0"+dateObj.getSeconds();
+				  dateHour = dateHour.substr(dateHour.length-2, 2);
+				  dateMin = dateMin.substr(dateMin.length-2, 2);
+				  document.write( "最終更新日時:  "  );
+				  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+				  //document.write( dateHour + ':' + dateMin + '<br>' );
+				</script>
+		<!-- /#info --></div>
+	    <a href="../pl">トップページへ戻る</a>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

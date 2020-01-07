@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keywords" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- CSS -->
+    <link href="software/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+	<script type="text/javascript" src="software/js/countWord.js"></script>
+
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript"><!--
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    --></script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+</head>
+
+
+
+<body class="software" id="lists">
+<div id="contents">
+    <header>
+        <h1>ソフトウェア工学Ⅱ</h1>
+    </header>
+    
+    <article>
+    	<h2>列挙パターン</h2>
+    	<section>
+        	<h4>Q1. 列挙パターンの例をつぶさに見て、データ抽象とポリモーフィズムの観点で考察してレポートにしてください。</h4>
+        	<div class="Block" id="Q1">
+	        	<h5><span class="for_inline_of_h5">データ抽象</span></h5>
+	        	<p>
+				　indexで要素を取り出す列挙パターンのデータ抽出は、要素（データ）の数だけ抽出するというスタイルであるが、これだと例えば、HashSetのように順不同の構造に変えたとき、forのコードを書き換えないといけなくなる。そのため、Iteratorやfor-eachを使わないと、いけない。そして、Iteratorやfor-eachで要素を取り出す列挙パターンのデータ抽出では、次の要素が存在すれば、次々に要素を抽出できるようになっているので、順不同であっても問題なく要素を抽出できる。また、for-eachの場合は要素の取り出しが隠蔽されており、Iteratorとは違ってキャストして新たな変数に代入しなくても要素を抽出できる。
+				</p>
+	        	<h5><span class="for_inline_of_h5">ポリモーフィズム</span></h5>
+	        	<p>
+	        	　ポリモーフィズムとは、「同じ動作をするけれど、異なる反応が帰ってくる」というものであるが、Iteratorやfor-eachで要素を取り出す列挙パターンでは、aCollectionのオブジェクトの種類（今回はPointクラス）によって、異なる戻り値が帰ってくるため、多態性がある。しかし、indexで要素を取り出す列挙パターンでは、多態性はないように思う。
+				</p>
+        	</div>
+    	</section>
+        
+        <section>
+	        <h4>Q2. その他、感想など</h4>
+	        <div class="Block" id="Q2">
+	        	<p>
+	        	　最初に会社の見分け方を聞いて、すごく参考になりました。会社選びに関して、「会社説明会に行くか、本を参考にする」のがベストなのかなあと勝手に考えていましたが、それ以前に判断する方法を知れて良かったです。
+	        	</p>	        
+		        <p>
+		        　プログラミング言語の話を聞いて思ったのが、プログラミング言語の歴史や背景をもっと知るべきだということです。もちろん、自分の勉強しているプログラミング言語の歴史や背景などは少々は知っていますが、他の言語はネットで上がっているのを少々読む程度で、表面だけの判断しかしていません。そのため、Lisp, LOGO, そしてSimulaといった言語のどういう部分がSmalltalkに影響していったかという背景を知っておらず、損しています。なので、時間が空いたときにプログラミング言語の本を立ち読みしたいと思います。
+		        </p>
+		        <p>
+		        　それから、「はてな」の問題に関して感じたのが、1つのオブジェクトが在ったとき、そのオブジェクトには、構造,機能,発生という魂みたいなものが必ずあり、この魂がオブジェクトを形成しているということ、そして構造,機能,発生がないとオブジェクトは成り立たないということを感じました。　
+		        </p>
+	            
+		        <div id="info">
+		            <script type="text/javascript">
+					  var dateObj = new Date( document.lastModified );
+					  var dateYear = dateObj.getFullYear();
+					  var dateMon = dateObj.getMonth() + 1;
+					  var dateDate = dateObj.getDate();
+					  var dateHour = "0"+dateObj.getHours();
+					  var dateMin = "0"+dateObj.getMinutes();
+					  var dateSec = "0"+dateObj.getSeconds();
+					  dateHour = dateHour.substr(dateHour.length-2, 2);
+					  dateMin = dateMin.substr(dateMin.length-2, 2);
+					  document.write( "最終更新日時:  "  );
+					  document.write( dateYear + '年' + dateMon + '月' + dateDate + '日 ' );
+					  //document.write( dateHour + ':' + dateMin + '<br>' );
+					</script>
+					<span id="resultCountedWord"></span>
+		        <!-- /#info --></div>
+	        <!-- /.Block --></div>
+	        <a href="../software">トップページへ戻る</a>
+        </section>
+    </article>
+<!-- /#contents --></div>
+</body>
+</html>

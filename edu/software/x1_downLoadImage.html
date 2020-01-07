@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+    <head><title>ソフトウェア工学Ⅱの小テスト</title>
+    
+    <!-- 検索エンジンに食わせる -->
+    <meta name = "keyboard" content="Tasker☆net｜ソフトウェア工学Ⅱ" />
+    <meta name = "description" content="ソフトウェア工学Ⅱの小テスト。" />
+        
+    <!-- 文字エンコーディング-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp" />
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-jp" />
+        
+    <!-- CSS -->
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link href="downLoadImage/css/import.css" rel="stylesheet" type="text/css" />
+        
+    <!-- JS -->
+    <meta http-equiv="Content-Script-Type" content="text/javaScript">
+    <script type="text/javascript" src="software/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="software/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="software/js/countWord.js"></script><!-- 文字数カウント -->
+
+        
+    <!-- Javaコード記述用 -->
+    <script type="text/javascript" src="software/setSourceCode/scripts/shCore.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="software/setSourceCode/scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.config.clipboardSwf = 'software/setSourceCode/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="software/setSourceCode/styles/shThemeDefault.css"/>
+    
+        
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+    </head>
+
+
+
+<body class="software" id="downloadImage">
+        <div id="contents">
+            <header>
+                <h1>ソフトウェア工学Ⅱ - 小テスト</h1>
+            </header>
+            
+            <article>
+                <h2>DownloadImage</h2>
+                <h4>MVCをコードリーディングして得たもの</h4>
+                <p>
+                　今回のDownloadImageの小レポート（<a href="downLoadImage/codes/Example.java" style="color: white;">Task</a>）に関して、MVCパッケージのコードリーディング、DownloadImageのコーディングを通して、様々な教訓が得られました。コーディングに当たって、青木さんの作られたMVCを読んでから、どのようにコーディングするのがベストなのかを考えました。コードリーディングをしてみて、青木さんの手法と従来の私の手法を比べた表を表1に記載します。
+                </p>
+        
+                
+                
+                <!-- 表の始まり -->
+                <h5 id="tableName">表1. 従来の私の手法と青木さんの手法を比較した結果</h5>
+                <table border="1" cellspacing="5">
+                    <tr>
+                        <th><!-- 空白 --></th>
+                        <th>従来の私の手法</th>
+                        <th>青木さんの手法</th>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>1.ブレース括弧</th>
+                        <td>
+                            <pre class="brush: java;">
+                                for(…) {
+                                }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                for(…) 
+                                {
+                                }
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    <tr>
+                        <th>2.参照型変数</th>
+                        <td>
+                            <pre class="brush: java;">
+                                Exception exception
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                Exception anException
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    <tr>
+                        <th>3.レシーバ</th>
+                        <td>
+                            <pre class="brush: java;">
+                                initialize();
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                this.initialize();
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>4.ブランク</th>
+                        <td>
+                            <pre class="brush: java;">
+                                for(int index=0; index<10; index++)
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                for(int index = 0; index < 10; index++)
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>5.継承</th>
+                            <td>
+                                <pre class="brush: java;">
+                                    public class Model
+                                </pre>
+                            </td>
+                            <td>
+                                <pre class="brush: java;">
+                                    public class Model extends Object 
+                                </pre>
+                            </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>6.コメント</th>
+                        <td>
+                            <pre class="brush: java;">
+                                /*
+                                 * ちょめする。
+                                 */
+                                hogeHogeHoge() {
+                                    hoge(); //コメント
+                                    hogeHoge(); //コメント
+                                }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                /*
+                                 * ちょめし、
+                                 * そのちょめをちょめする。
+                                 * 良好（2012年11月27日）
+                                 */
+                                hogeHogeHoge() {
+                                    hoge();
+                                    hogeHoge();
+                                }
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>7.Adapter</th>
+                        <td>
+                            <pre class="brush: java;">
+                                使うmethodだけオーバライド
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                すべてオーバーライド
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>8.リターン</th>
+                        <td>
+                            <pre class="brush: java;">
+                                void hoge() {
+                                    hogeHoge();
+                                }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                void hoge() {
+                                    hogeHoge();
+                                    return;
+                                }
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                    
+                    
+                    <tr>
+                        <th>9.変数名</th>
+                        <td>
+                            <pre class="brush: java;">
+                                arg
+                            </pre>
+                        </td>
+                        <td>
+                            <pre class="brush: java;">
+                                arguments
+                            </pre>
+                        </td>
+                    <!-- /行終わり --></tr>
+                </table>
+                
+                <p>
+                　コードリーディングをして自分と比べた結果、表1を見てもらえばわかるように、従来の私の方法は間違っていたとわかります。「1.ブレース括弧」については、個人の好みだと昔聞いたので、今後他の玄人プログラマーの書き方を見ながら判断していこうと思いますが、「2.参照型変数」については、講義でもおっしゃられていたように1つのモノだと考えて、命名してやるのがベストだと知りました。また、「3.レシーバ、5.継承、7.Adapter、8.リターン、9.変数名」については、コードを読む人（自分自身も含めた人）に対して、誰が何をしているのかが、明示的にわからないコードを今まで私は書いていました。ですので今後、暗黙の命令を明示的にわかるように、コーディングしていきたいと思います。次に「6.コメント」については、今までメソッド内に無駄なコメントが多く、上の例のように、メソッドに関するコメントは記述していても、メソッドに関するコメントを具体的には書いていませんでした。また、メソッドを説明するコメントの最後に、テスト結果を書くということはしていませんでした。最後に、「4.ブランク」については前から気になっていたことですが、読みやすくするためにもブランクは多様した方が良いとわかりました。今後コードを書く際は、MVCのコードを参考にしてどういうコードが良いのか判断していきたいと思います。
+                </p>
+                
+                
+                <h4>DownloadImageをコーディングして得たもの</h4>
+                <p>
+                try-catch文に関して、これまで意識していなかったため、catch文にどういう命令を実行すれば良いのかわかりませんでしたし、これまでURLを取得する際、try-catchしていませんでした。今後、自分のしたい処理が例外をはくものかどうか確認してから、使いたいと思います。
+                </p>
+                
+                <h4>DownloadImageテスト</h4>
+                <p>
+                　プログラムは正常に動きます。ただ、58行目：boo(aString); 80行目：open(aView, new Dimension(anBufferedImageFromLocal.getWidth(), anBufferedImageFromLocal.getHeight()) );に関しては、thisをつけたかったのですが、booメソッドとopenメソッドはstaticであるので、thisを使うことは出来ませんでした。 ちなみに念のため、ウィンドウが出てから、3秒たっているかをタイマーを使って確認し、3.001秒になっていることは確認しました。そして、URLの例外の場合は「hhttp://」、画像読み込みの場合は「SmalltalkIdiomsFrontPage.jpgss」などのようにして、例外が起こったことを一応確認しました。ただし、Threadの例外処理の確認はしていません。
+                </p>
+                <div id="image">
+                    <img src="software/images/smalltalkImage.png" alt="スモールトークのイメージ画像" height="340px;" width="240px;">
+                <!-- /#image --></div>
+                
+                
+                <h4>HTMLドキュメントに関して</h4>
+                <p>
+                結構手間がかかってしまったので、出来ればPHPを使って、データの書き込みが楽に出来るように設計できるようにしたいと思います（Webが専門分野ではありませんが、今後のためにも）。下に全文字数をカウントしています。だいたいの量でわかるとは思いますが、これによって一応不正をしていないと証明できます。また、テーブル内は数えていません。
+                </p>
+                
+                <span id="resultCountedWord" value="20"></span>
+            </article>
+                
+            
+        <!-- /#contents --></div>
+</body>
+</html>

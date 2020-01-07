@@ -1,0 +1,91 @@
+/* 
+===================================== 
+
+	section.css
+
+===================================== */
+
+
+/* セクション
+================================= */
+
+section {
+    margin-top: 10px;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+/* clearfix */
+section ul:after {
+	content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+}
+
+section ul li {
+    float:left;
+    display: block;
+    width: 120px;
+    line-height:30px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    border:1px solid gray;
+    border-bottom:none;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+
+section ul li.tab {
+    cursor: pointer;
+    background: #6b6b6b;
+}
+
+section ul li.selected_tab {
+    cursor: default;
+    background: #E18728;
+    text-shadow: 1px 1px 3px rgb(0,0,0);
+}
+
+
+
+
+
+section.report article {
+    border-top: 15px solid #E18728;
+    width: 650px;
+    padding: 20px;
+    background-color:white;
+    box-shadow: 2px 2px 10px 0px #AAA;
+}
+
+section.report article.show {
+    display:block;
+}
+
+section.report article.noshow {
+    display:none;
+}
+
+section.report article p {
+    font-size:15px;
+}
+
+section.report article h4 {
+    margin-bottom: 12px;
+    font-size:1.3em;
+}
+
+
+
+
+
+
+
